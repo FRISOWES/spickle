@@ -1,240 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spickle B.V.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-/* ----------  Base ---------- */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Roboto',-apple-system,sans-serif;color:#222;background:#f8f8f8;line-height:1.65}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spickle B.V. – Strategic Leadership for Tech Innovators</title>
+  <meta name="description" content="Spickle B.V. provides interim leadership, growth strategy, and execution for Web3, AI, Fintech, and Cloud-driven companies." />
 
-h1,h2,h3{line-height:1.25}a{color:#0066cc;text-decoration:none}a:hover{text-decoration:underline}
+  <!-- Font Preload -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-/* ----------  Layout ---------- */
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-.section{padding:60px 0}
-@media(max-width:768px){.section{padding:40px 0}}
-.text-center{text-align:center}
-.mt-40{margin-top:40px}
-.mb-40{margin-bottom:40px}
+  <style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Roboto',-apple-system,sans-serif;color:#222;background:#f8f8f8;line-height:1.65}
+  h1,h2,h3{line-height:1.25}a{color:#0066cc;text-decoration:none}a:hover{text-decoration:underline}
+  .skip-link {
+    position:absolute;
+    left:-999px;
+    top:auto;
+    background:#000;
+    color:#fff;
+    padding:8px;
+    z-index:999;
+  }
+  .skip-link:focus {
+    left:16px;
+    top:16px;
+  }
 
-/* ----------  Header ---------- */
-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e7eb}
-header .inner{display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
-.logo img{height:90px}
-nav ul{display:flex;gap:32px;list-style:none;font-weight:500}
-#toggle{display:none}
-label.hamburger{display:none}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .section{padding:60px 0}
+  @media(max-width:768px){.section{padding:40px 0}}
+  .text-center{text-align:center}
+  .mt-40{margin-top:40px}
+  .mb-40{margin-bottom:40px}
 
-@media(max-width:768px){
-  nav ul{position:absolute;top:100%;right:24px;flex-direction:column;background:#fff;border:1px solid #ddd;padding:16px 24px;display:none;box-shadow:0 4px 16px rgba(0,0,0,.05)}
-  #toggle:checked+label+ul{display:flex}
-  label.hamburger{display:flex;flex-direction:column;justify-content:space-between;width:30px;height:22px;cursor:pointer}
-  label.hamburger span{background:#333;height:3px;border-radius:3px}
-}
+  header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e7eb}
+  header .inner{display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+  .logo img{height:90px}
+  nav ul{display:flex;gap:32px;list-style:none;font-weight:500}
+  #toggle{display:none}
+  label.hamburger{display:none}
 
-/* ----------  Hero ---------- */
-#hero{background:url('banner.jpg') center/cover no-repeat fixed;min-height:96vh;display:flex;align-items:center;text-align:center;color:#fff;position:relative}
-@media(max-width:768px){#hero{background-attachment:scroll}}
-#hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.5)}
-.hero-content{position:relative;z-index:1;width:100%}
-.hero-content h1{font-size:3rem;font-weight:700;margin-bottom:.4em}
-.hero-content p{font-size:1.15rem;margin-bottom:30px}
-.btn{display:inline-block;background:#5c6ac4;color:#fff;padding:12px 32px;border-radius:30px;font-weight:500;transition:.3s}
-.btn:hover{background:#4f5aae;transform:translateY(-2px)}
-@media(max-width:768px){.hero-content h1{font-size:2.25rem}.hero-content p{font-size:1rem}}
+  @media(max-width:768px){
+    nav ul{position:absolute;top:100%;right:24px;flex-direction:column;background:#fff;border:1px solid #ddd;padding:16px 24px;display:none;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+    #toggle:checked+label+ul{display:flex}
+    label.hamburger{display:flex;flex-direction:column;justify-content:space-between;width:30px;height:22px;cursor:pointer}
+    label.hamburger span{background:#333;height:3px;border-radius:3px}
+  }
 
-/* ----------  Buzz ---------- */
-.buzz{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:-30px}
-.tag{background:#e0e0e0;padding:9px 18px;border-radius:22px;font-size:.9rem;font-weight:500}
+  #hero {
+    background: url('banner.jpg') center/cover no-repeat;
+    padding: 100px 0;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  #hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.5)}
+  .hero-content{position:relative;z-index:1;width:100%}
+  .hero-content h1{font-size:3rem;font-weight:700;margin-bottom:.4em;text-shadow:0 2px 4px rgba(0,0,0,.4)}
+  .hero-content p{font-size:1.15rem;margin-bottom:30px;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+  .btn{display:inline-block;background:#5c6ac4;color:#fff;padding:12px 32px;border-radius:30px;font-weight:500;transition:.3s}
+  .btn:hover{background:#4f5aae;transform:translateY(-2px)}
+  .btn:focus{outline:2px dashed #fff;outline-offset:4px}
+  @media(max-width:768px){.hero-content h1{font-size:2.25rem}.hero-content p{font-size:1rem}}
 
-/* ----------  Section Title ---------- */
-.section-title{font-size:2.25rem;margin-bottom:14px;text-align:center;position:relative}
-.section-title::after{content:'';display:block;width:48px;height:4px;background:#0066cc;margin:8px auto 0}
+  .buzz{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:-30px}
+  .tag{background:#e0e0e0;padding:9px 18px;border-radius:22px;font-size:.9rem;font-weight:500}
 
-/* ----------  About ---------- */
-#about{background:#fafafa}
-#about .wrapper{position:relative}
-#about .wrapper::before{content:'spickle.';position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:6rem;font-weight:700;color:#f0f0f0;pointer-events:none}
-.about-table{margin:32px auto 0;max-width:820px;font-size:.95rem;text-align:left}
-.about-table td{vertical-align:top;padding:8px 0}
-.about-table strong{display:block}
+  .section-title{font-size:2.25rem;margin-bottom:14px;text-align:center;position:relative}
+  .section-title::after{content:'';display:block;width:48px;height:4px;background:#0066cc;margin:8px auto 0}
 
-/* ----------  Cards ---------- */
-.cards{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:48px}
-.card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 16px rgba(0,0,0,.05);transition:.3s;display:flex;flex-direction:column;gap:12px}
-.card:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
-.card h3{font-size:1.35rem;color:#5c6ac4}
-.card ul{list-style:disc;margin-left:18px;font-size:.9rem}
+  #about{background:#fafafa}
+  .about-table{margin:32px auto 0;max-width:820px;font-size:.95rem;text-align:left}
+  .about-table td{vertical-align:top;padding:8px 0}
+  .about-table strong{display:block}
 
-/* ----------  Chips ---------- */
-.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
-.chips li{list-style:none;background:#eee;padding:8px 18px;border-radius:20px;font-size:.85rem;font-weight:500}
+  .cards{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:48px}
+  .card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 16px rgba(0,0,0,.05);transition:.3s;display:flex;flex-direction:column;gap:12px}
+  .card:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+  .card h3{font-size:1.35rem;color:#5c6ac4}
+  .card ul {
+    list-style: disc;
+    text-align: left;
+    padding-left: 20px;
+    margin: 0;
+    font-size: .9rem;
+  }
 
-/* ----------  Client Logos ---------- */
-.logo-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:40px}
-.logo-bar img{max-height:50px;filter:grayscale(100%) opacity(.6);transition:.3s}
-.logo-bar img:hover{filter:none;opacity:1}
+  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+  .chips li{list-style:none;background:#eee;padding:8px 18px;border-radius:20px;font-size:.85rem;font-weight:500}
 
-/* ----------  Contact ---------- */
-#contact{background:#0066cc;color:#fff;border-radius:8px;text-align:center}
-.contact-list p{margin:6px 0;font-size:1rem}
-.contact-list a{color:#fff;font-weight:500}
+  .logo-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:40px}
+  .logo-bar img{max-height:50px;filter:grayscale(100%) opacity(.6);transition:.3s}
+  .logo-bar img:hover{filter:none;opacity:1}
 
-/* ----------  Footer ---------- */
-footer{text-align:center;padding:24px;font-size:.9rem;color:#777}
+  #contact{background:#0066cc;color:#fff;border-radius:8px;text-align:center}
+  .contact-list p{margin:6px 0;font-size:1rem}
+  .contact-list a{color:#fff;font-weight:500}
 
-/* ----------  Fade Animation ---------- */
-@keyframes fadeUp{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:none}}
-.fade{opacity:0;transform:translateY(24px)}
-.fade.visible{animation:fadeUp .7s forwards}
-</style>
-<script>
-// fade‑in observer
-window.addEventListener('DOMContentLoaded',()=>{
-  const io=new IntersectionObserver(entries=>entries.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.15});
-  document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-});
-</script>
+  footer{text-align:center;padding:24px;font-size:.9rem;color:#777}
+
+  @keyframes fadeUp{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:none}}
+  .fade{opacity:0;transform:translateY(24px)}
+  .fade.visible{animation:fadeUp .7s forwards}
+  </style>
+
+  <script defer>
+    window.addEventListener('DOMContentLoaded',()=>{
+      const io=new IntersectionObserver(entries=>entries.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.15});
+      document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+    });
+  </script>
 </head>
+
 <body>
+  <a href="#hero" class="skip-link">Skip to main content</a>
 
-<header class="fade">
-  <div class="inner container">
-    <div class="logo"><img src="spickle-blue.png" alt="Spickle"></div>
-    <input type="checkbox" id="toggle">
-    <label for="toggle" class="hamburger"><span></span><span></span><span></span></label>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#clients">Clients</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<section id="hero" class="fade">
-  <div class="hero-content container">
-    <h1>Driving Growth &amp; Innovation</h1>
-    <p>Hands‑on leadership and strategy for Web3, AI, Cloud, E‑commerce, and Fintech innovators.</p>
-    <a href="#about" class="btn">Discover More</a>
-  </div>
-</section>
-
-<!-- Buzz -->
-<div class="container">
-  <div class="buzz fade">
-    <span class="tag">Strategic Leadership</span>
-    <span class="tag">Seamless Execution</span>
-    <span class="tag">Data‑Driven Insights</span>
-    <span class="tag">Scalable Solutions</span>
-    <span class="tag">Future‑Proof Growth</span>
-  </div>
-</div>
-
-<!-- About -->
-<section id="about" class="section fade">
-  <div class="container wrapper text-center">
-    <h2 class="section-title">About Spickle</h2>
-    <p class="mb-40">Founded in 2025 by Friso Wesseling, Spickle B.V. delivers interim leadership and strategic expertise at the intersection of technology and innovation.</p>
-    <table class="about-table">
-      <tr>
-        <td><strong>Founder &amp; Background</strong></td>
-        <td>Global Head of Financial Services at Daraz (Alibaba Group), co‑founder &amp; COO at fintech pioneer Koko, Interim COO at Vertical AI.</td>
-      </tr>
-      <tr>
-        <td><strong>Education</strong></td>
-        <td>LL.B Law & Economics · BSc Business Economics — Utrecht University<br>MSc Management of Innovation</td>
-      </tr>
-      <tr>
-        <td><strong>Focus Timeline</strong></td>
-        <td>Blockchain (2017‑) • E‑commerce &amp; Fintech (2019‑) • AI &amp; Cloud Services (2024‑)</td>
-      </tr>
-    </table>
-  </div>
-</section>
-
-<!-- Services -->
-<section id="services" class="section fade">
-  <div class="container text-center">
-    <h2 class="section-title">Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Interim Management</h3>
+  <header class="fade">
+    <div class="inner container">
+      <div class="logo"><img src="spickle-blue.png" alt="Spickle Logo" loading="lazy" /></div>
+      <input type="checkbox" id="toggle" aria-label="Toggle menu" />
+      <label for="toggle" class="hamburger"><span></span><span></span><span></span></label>
+      <nav aria-label="Main navigation">
         <ul>
-          <li>Board‑level COO/CFO/CEO roles</li>
-          <li>Rapid operational audits &amp; turn‑arounds</li>
-          <li>Leadership continuity during funding or M&amp;A</li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="fade">
+      <div class="hero-content container">
+        <h1>Driving Growth &amp; Innovation</h1>
+        <p>Hands‑on leadership and strategy for Web3, AI, Cloud, E‑commerce, and Fintech innovators.</p>
+        <a href="#about" class="btn">Discover More</a>
       </div>
-      <div class="card">
-        <h3>Project Consulting</h3>
-        <ul>
-          <li>Cloud migrations &amp; AI‑stack deployments</li>
-          <li>Marketplace / payment‑rail launches</li>
-          <li>Restructuring &amp; cost‑optimisation programmes</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Growth Strategy</h3>
-        <ul>
-          <li>GTM &amp; market‑entry roadmaps</li>
-          <li>Unit‑economics &amp; pricing optimisation</li>
-          <li>Data‑driven KPI &amp; OKR frameworks</li>
-        </ul>
+    </section>
+
+    <div class="container">
+      <div class="buzz fade">
+        <span class="tag">Strategic Leadership</span>
+        <span class="tag">Seamless Execution</span>
+        <span class="tag">Data‑Driven Insights</span>
+        <span class="tag">Scalable Solutions</span>
+        <span class="tag">Future‑Proof Growth</span>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Expertise -->
-<section id="expertise" class="section fade" style="background:#fafafa">
-  <div class="container text-center">
-    <h2 class="section-title">Expertise</h2>
-    <p>Deep, hands‑on experience across today’s most transformative technology stacks and business models.</p>
-    <ul class="chips">
-      <li>Web3</li><li>Artificial Intelligence</li><li>Cloud Infrastructure</li><li>E‑commerce</li><li>Fintech</li>
-    </ul>
-  </div>
-</section>
+    <section id="about" class="section fade">
+      <div class="container wrapper text-center">
+        <h2 class="section-title">About Spickle</h2>
+        <p class="mb-40">Founded in 2025 by Friso Wesseling, Spickle B.V. delivers interim leadership and strategic expertise at the intersection of technology and innovation.</p>
+        <table class="about-table">
+          <tr><td><strong>Founder &amp; Background</strong></td><td>Global Head of Financial Services at Daraz (Alibaba Group), co‑founder &amp; COO at fintech pioneer Koko, Interim COO at Vertical AI.</td></tr>
+          <tr><td><strong>Education</strong></td><td>LL.B Law & Economics · BSc Business Economics — Utrecht University<br>MSc Management of Innovation</td></tr>
+          <tr><td><strong>Focus Timeline</strong></td><td>Blockchain (2017‑) • E‑commerce &amp; Fintech (2019‑) • AI &amp; Cloud Services (2024‑)</td></tr>
+        </table>
+      </div>
+    </section>
 
-<!-- Clients -->
-<section id="clients" class="section fade">
-  <div class="container text-center">
-    <h2 class="section-title">Clients &amp; Experience</h2>
-    <p class="mb-40">Companies we’ve built, led, or supported on their growth journeys:</p>
-    <div class="logo-bar">
-      <img src="Alibaba_logo.png"  alt="Alibaba Group">
-      <img src="Daraz_Logo.png"    alt="Daraz">
-      <img src="Koko_logo.png"     alt="Koko">
-      <img src="Volero_logo.svg"   alt="Volero">
-      <img src="Vertical_Logo.svg" alt="Vertical AI">
-    </div>
-  </div>
-</section>
+    <section id="services" class="section fade">
+      <div class="container text-center">
+        <h2 class="section-title">Services</h2>
+        <div class="cards">
+          <div class="card"><h3>Interim Management</h3><ul><li>Board‑level COO/CFO/CEO roles</li><li>Rapid operational audits &amp; turn‑arounds</li><li>Leadership continuity during funding or M&amp;A</li></ul></div>
+          <div class="card"><h3>Project Consulting</h3><ul><li>Cloud migrations &amp; AI‑stack deployments</li><li>Marketplace / payment‑rail launches</li><li>Restructuring &amp; cost‑optimisation programmes</li></ul></div>
+          <div class="card"><h3>Growth Strategy</h3><ul><li>GTM &amp; market‑entry roadmaps</li><li>Unit‑economics &amp; pricing optimisation</li><li>Data‑driven KPI &amp; OKR frameworks</li></ul></div>
+        </div>
+      </div>
+    </section>
 
-<!-- Contact -->
-<section id="contact" class="section fade" style="background:#0066cc;color:#fff;border-radius:8px 8px 0 0">
-  <div class="container contact-list text-center">
-    <h2 class="section-title" style="color:#fff">Contact</h2>
-    <p>Email: <a href="mailto:friso@spickle.nl">friso@spickle.nl</a></p>
-    <p>Phone: <a href="tel:+31643515977" style="color:#fff">+31 6 43 515 977</a></p>
-    <p>Arnhemsestraat 33, 2587 SP, The Hague, Netherlands</p>
-  </div>
-</section>
+    <section id="expertise" class="section fade" style="background:#fafafa">
+      <div class="container text-center">
+        <h2 class="section-title">Expertise</h2>
+        <p>Deep, hands‑on experience across today’s most transformative technology stacks and business models.</p>
+        <ul class="chips">
+          <li>Web3</li><li>Artificial Intelligence</li><li>Cloud Infrastructure</li><li>E‑commerce</li><li>Fintech</li>
+        </ul>
+      </div>
+    </section>
 
-<!-- Footer -->
-<footer class="fade" style="background:#f2f2f2">
-  © 2025 Spickle B.V. — All rights reserved.
+    <section id="clients" class="section fade">
+      <div class="container text-center">
+        <h2 class="section-title">Clients &amp; Experience</h2>
+        <p class="mb-40">Companies we’ve built, led, or supported on their growth journeys:</p>
+        <div class="logo-bar">
+          <img src="Alibaba_logo.png" alt="Alibaba Group" loading="lazy" />
+          <img src="Daraz_Logo.png" alt="Daraz" loading="lazy" />
+          <img src="Koko_logo.png" alt="Koko" loading="lazy" />
+          <img src="Volero_logo.svg" alt="Volero" loading="lazy" />
+          <img src="Vertical_Logo.svg" alt="Vertical AI" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section fade" style="background:#0066cc;color:#fff;border-radius:8px 8px 0 0">
+      <div class="container contact-list text-center">
+        <h2 class="section-title" style="color:#fff">Contact</h2>
+        <p>Email: <a href="mailto:friso@spickle.nl">friso@spickle.nl</a></p>
+        <p>Phone: <a href="tel:+31643515977" style="color:#fff">+31 6 43 515 977</a></p>
+        <p>Arnhemsestraat 33, 2587 SP, The Hague, Netherlands</p>
+      </div>
+    </section>
+  </main>
+
+ <footer class="fade" style="background:#f2f2f2">
+  © 2025 Spickle B.V. — All rights reserved.<br>
+  KvK: 96377763 · BTW: NL867584841B01
 </footer>
-
 </body>
 </html>
