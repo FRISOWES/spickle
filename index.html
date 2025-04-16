@@ -4,259 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Spickle B.V. | Transforming Operations</title>
-  <!-- Using Google Fonts for clean typography -->
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link 
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" 
     rel="stylesheet">
   <style>
-    /* Global Reset & Base Styles */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Roboto', -apple-system, 'Helvetica Neue', sans-serif;
-      color: #333;
-      background: #f8f8f8;
-      line-height: 1.6;
-    }
-    
-    /* Navbar */
-    header {
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #eaeaea;
-    }
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo img {
-      height: 50px;
-      width: auto;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: #5c6ac4;
-    }
-    
-    /* Hero Section */
-    .hero {
-      position: relative;
-      background: linear-gradient(135deg, #ffffff, #e2e8f0);
-      padding: 120px 20px;
-      text-align: center;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -50px;
-      left: -50px;
-      width: 300px;
-      height: 300px;
-      background: rgba(92, 106, 196, 0.15);
-      border-radius: 50%;
-      filter: blur(50px);
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: -80px;
-      right: -80px;
-      width: 400px;
-      height: 400px;
-      background: rgba(92, 106, 196, 0.15);
-      border-radius: 50%;
-      filter: blur(80px);
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #222;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      color: #555;
-    }
-    .hero a.btn {
-      background: #5c6ac4;
-      color: #fff;
-      padding: 15px 40px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      text-decoration: none;
-    }
-    .hero a.btn:hover {
-      background: #4f5aae;
-      transform: translateY(-3px);
-    }
-    
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Roboto', -apple-system, sans-serif; color: #222; background: #f8f8f8; }
+
+    /* Header */
+    header { background: #fff; position: sticky; top: 0; z-index:100; border-bottom:1px solid #eaeaea; }
+    .nav-container { max-width:1200px; margin:0 auto; padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo img { height:50px; }
+    nav ul { list-style:none; display:flex; gap:1.5rem; }
+    nav a { text-decoration:none; color:#333; font-weight:500; transition:color .3s; }
+    nav a:hover { color:#5c6ac4; }
+
+    /* Hero */
+    .hero { position:relative; height:80vh; background:url('banner.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; text-align:center; }
+    .hero::after { content:""; position:absolute; inset:0; background:rgba(0,0,0,.4); }
+    .hero-content { position:relative; z-index:1; color:#fff; max-width:800px; padding:0 1rem; }
+    .hero-content h1 { font-size:3rem; margin-bottom:1rem; line-height:1.2; }
+    .hero-content p { font-size:1.25rem; margin-bottom:2rem; }
+    .hero-content .btn { background:#5c6ac4; color:#fff; padding:.75rem 2rem; border-radius:30px; text-decoration:none; transition:background .3s, transform .3s; }
+    .hero-content .btn:hover { background:#4f5aae; transform:translateY(-3px); }
+
+    /* Buzz Words */
+    .buzz { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin:3rem auto; max-width:900px; }
+    .buzz .item { flex:1 1 150px; font-weight:500; color:#5c6ac4; font-size:1.1rem; text-align:center; }
+
+    /* Callout */
+    .callout { background:#5c6ac4; color:#fff; text-align:center; padding:2rem 1rem; }
+    .callout h2 { font-size:1.75rem; margin-bottom:1rem; }
+    .callout a { display:inline-block; background:#fff; color:#5c6ac4; padding:.75rem 2rem; border-radius:30px; text-decoration:none; font-weight:500; transition:background .3s, color .3s; }
+    .callout a:hover { background:#e8e8ee; color:#333; }
+
     /* Section Titles */
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin: 80px 0 40px;
-      color: #222;
-    }
-    
-    /* Content Container */
-    .content-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    /* Grid Layout for Cards */
-    .card-grid {
-      display: grid;
-      gap: 40px;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      margin-bottom: 80px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-      padding: 40px 20px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    }
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: #5c6ac4;
-    }
-    .card p {
-      color: #666;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    
-    /* About Section */
-    .about-section {
-      background: #fff;
-      border-radius: 12px;
-      padding: 60px 40px;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      margin-bottom: 80px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-    }
-    .about-text {
-      flex: 1;
-    }
-    .about-text h2 {
-      font-size: 2rem;
-      color: #222;
-      margin-bottom: 20px;
-    }
-    .about-text p {
-      font-size: 1.1rem;
-      color: #555;
-      line-height: 1.7;
-    }
-    .about-image {
-      flex: 1;
-      text-align: center;
-    }
-    .about-image img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-    
-    /* Contact Section */
-    .contact-section {
-      background: #fff;
-      border-radius: 12px;
-      padding: 60px 40px;
-      margin-bottom: 80px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-    }
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      text-align: center;
-    }
-    .contact-details h3 {
-      color: #5c6ac4;
-      font-size: 1.5rem;
-    }
-    .contact-details p {
-      color: #555;
-      font-size: 1rem;
-    }
-    .contact-details a {
-      color: #5c6ac4;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .contact-details a:hover {
-      color: #4f5aae;
-    }
-    
+    .section-title { text-align:center; font-size:2.5rem; margin:80px 0 40px; color:#222; }
+
+    /* Card Grid */
+    .content-container { max-width:1200px; margin:0 auto; padding:0 20px; }
+    .card-grid { display:grid; gap:40px; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); margin-bottom:80px; }
+    .card { background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.05); padding:40px 20px; text-align:center; transition:transform .3s, box-shadow .3s; }
+    .card:hover { transform:translateY(-10px); box-shadow:0 8px 24px rgba(0,0,0,0.1); }
+    .card h3 { font-size:1.5rem; margin-bottom:15px; color:#5c6ac4; }
+    .card p { color:#666; line-height:1.5; }
+
+    /* About */
+    .about-section { display:flex; flex-wrap:wrap; gap:40px; background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.05); padding:60px 40px; margin-bottom:80px; }
+    .about-text { flex:1; min-width:280px; }
+    .about-text h2 { font-size:2rem; margin-bottom:20px; color:#222; }
+    .about-text p { font-size:1.1rem; color:#555; line-height:1.7; }
+    .about-image { flex:1; min-width:280px; text-align:center; }
+    .about-image img { width:100%; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.1); }
+
+    /* Contact */
+    .contact-section { background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.05); padding:60px 40px; margin-bottom:80px; }
+    .contact-details { text-align:center; display:flex; flex-direction:column; gap:20px; }
+    .contact-details h3 { color:#5c6ac4; font-size:1.5rem; }
+    .contact-details p, .contact-details a { font-size:1rem; color:#555; text-decoration:none; }
+    .contact-details a:hover { color:#4f5aae; }
+
     /* Footer */
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    footer p {
-      font-size: 0.9rem;
-    }
-    
-    /* Responsive Adjustments */
-    @media(max-width: 768px) {
-      .about-section {
-        flex-direction: column;
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
+    footer { background:#333; color:#fff; text-align:center; padding:40px 20px; }
+    footer p { font-size:.9rem; }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      .hero-content h1 { font-size:2.5rem; }
+      .hero-content p { font-size:1rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Header & Navigation -->
+
+  <!-- Header -->
   <header>
     <div class="nav-container">
       <div class="nav-logo">
@@ -273,136 +99,118 @@
       </nav>
     </div>
   </header>
-  
-  <!-- Hero Section -->
+
+  <!-- Hero with Banner -->
   <section class="hero" id="hero">
-    <div class="content-container">
-      <h1>Empowering Innovation & Excellence</h1>
-      <p>
-        Spickle B.V. transforms operational challenges into streamlined solutions through innovative management, technology, and strategic insights.
-      </p>
-      <a href="#contact" class="btn">Connect with Us</a>
+    <div class="hero-content">
+      <h1>Transforming Operations with Next‑Gen Expertise</h1>
+      <p>Interim Management • Web3 • AI • Cloud Services • E‑commerce • Fintech</p>
+      <a href="#contact" class="btn">Let’s Talk Strategy</a>
     </div>
   </section>
-  
+
+  <!-- Buzz Words -->
+  <div class="buzz">
+    <div class="item">Strategic Leadership</div>
+    <div class="item">Seamless Execution</div>
+    <div class="item">Data‑Driven Decisions</div>
+    <div class="item">Scalable Solutions</div>
+    <div class="item">Future‑Proof Growth</div>
+  </div>
+
+  <!-- Call to Action Strip -->
+  <section class="callout">
+    <h2>Ready to Elevate Your Business?</h2>
+    <a href="#contact">Book Your Free 30‑Minute Consultation →</a>
+  </section>
+
   <!-- Services Section -->
   <section id="services">
+    <h2 class="section-title">Our Services</h2>
     <div class="content-container">
-      <h2 class="section-title">Our Services</h2>
       <div class="card-grid">
         <div class="card">
           <h3>Interim Management</h3>
-          <p>
-            Seamless integration of experienced COO, CFO, and CEO solutions to align your operations and drive peak performance.
-          </p>
+          <p>Seamless integration of experienced COO/CFO/CEO solutions to align operations and drive peak performance.</p>
         </div>
         <div class="card">
           <h3>Project Consulting</h3>
-          <p>
-            Expert-led project management that reshapes your business operations and supports agile growth.
-          </p>
+          <p>Expert-led project management that reshapes operations and supports agile growth.</p>
         </div>
         <div class="card">
           <h3>Growth & Strategy</h3>
-          <p>
-            Innovative market analysis and strategic planning to unlock new opportunities and drive sustainable growth.
-          </p>
+          <p>Innovative market analysis and strategic planning to unlock new opportunities and drive sustainable growth.</p>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Expertise Section -->
   <section id="expertise">
+    <h2 class="section-title">Our Expertise</h2>
     <div class="content-container">
-      <h2 class="section-title">Our Expertise</h2>
       <div class="card-grid">
         <div class="card">
           <h3>Web3</h3>
-          <p>
-            Cutting-edge blockchain solutions for decentralized finance, governance, and secure data exchange.
-          </p>
+          <p>Cutting-edge blockchain solutions for decentralized finance, governance, and secure data exchange.</p>
         </div>
         <div class="card">
           <h3>AI</h3>
-          <p>
-            Transforming data into actionable insights with advanced AI models and predictive analytics.
-          </p>
+          <p>Transforming data into actionable insights with advanced AI models and predictive analytics.</p>
         </div>
         <div class="card">
           <h3>Cloud Services</h3>
-          <p>
-            Scalable and secure cloud infrastructure services designed to optimize performance and flexibility.
-          </p>
+          <p>Scalable and secure cloud infrastructure services designed to optimize performance and flexibility.</p>
         </div>
         <div class="card">
           <h3>E-commerce</h3>
-          <p>
-            Driving digital commerce success through user-centric design, robust platforms, and data-driven insights.
-          </p>
+          <p>Driving digital commerce success through user-centric design, robust platforms, and data-driven insights.</p>
         </div>
         <div class="card">
           <h3>Fintech</h3>
-          <p>
-            Innovative solutions in financial technology that streamline security, efficiency, and transactional reliability.
-          </p>
+          <p>Innovative solutions in financial technology that streamline security, efficiency, and transactional reliability.</p>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- About Section -->
   <section id="about">
+    <h2 class="section-title">About Spickle B.V.</h2>
     <div class="content-container about-section">
       <div class="about-text">
-        <h2>About Spickle B.V.</h2>
-        <p>
-          Spickle B.V. is a dynamic management consultancy that fuses deep industry expertise with innovative strategies.
-          We empower businesses to excel with flexible and high-impact operational solutions, tailored to each client’s unique challenges.
-        </p>
+        <p>Spickle B.V. is a dynamic management consultancy that fuses deep industry expertise with innovative strategies. We empower businesses to excel with flexible and high-impact operational solutions, tailored to each client’s unique challenges.</p>
       </div>
       <div class="about-image">
-        <!-- Replace this placeholder URL with your actual image if available -->
-        <img src="https://via.placeholder.com/500x300.png?text=About+Us" alt="About Spickle B.V.">
+        <img src="about.jpg" alt="About Spickle B.V.">
       </div>
     </div>
   </section>
-  
+
   <!-- Contact Section -->
   <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
     <div class="content-container contact-section">
-      <h2 class="section-title">Contact Us</h2>
       <div class="contact-details">
         <h3>Get in Touch</h3>
-        <p>
-          Email: <a href="mailto:info@spickle.com">info@spickle.com</a>
-        </p>
-        <p>
-          Phone: +31 20 123 4567
-        </p>
+        <p>Email: <a href="mailto:info@spickle.com">info@spickle.com</a></p>
+        <p>Phone: +31 20 123 4567</p>
         <div>
           <h3>Office Hours</h3>
-          <p>
-            Monday – Friday: 09:00 – 17:00
-          </p>
+          <p>Monday – Friday: 09:00 – 17:00</p>
         </div>
         <div>
           <h3>Our Office</h3>
-          <p>
-            Arnhemsestraat 33<br>
-            2587 SP, The Hague, Netherlands
-          </p>
+          <p>Arnhemsestraat 33<br>2587 SP, The Hague, Netherlands</p>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer>
-    <div class="content-container">
-      <p>© 2025 Spickle B.V. – All Rights Reserved.</p>
-    </div>
+    <p>© 2025 Spickle B.V. – All Rights Reserved.</p>
   </footer>
-  
+
 </body>
 </html>
