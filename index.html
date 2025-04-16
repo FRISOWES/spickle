@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spickle B.V. | Interim Management & Strategic Consulting</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /* Header & Navigation */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 20px 0;
+      border-bottom: 1px solid #ccc;
+    }
+    header img {
+      max-height: 70px;
+      width: auto;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #5c6ac4;
+    }
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #ffffff, #e8e8ee);
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #444;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #666;
+    }
+    .hero a {
+      background: #5c6ac4;
+      color: #fff;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .hero a:hover {
+      background: #4f5aae;
+    }
+    /* Section Titles */
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #5c6ac4;
+      font-size: 2rem;
+    }
+    /* Info Section Boxes */
+    .info-section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+    /* Flexbox Rows */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .col {
+      flex: 1;
+      min-width: 280px;
+    }
+    /* Service & Expertise Boxes */
+    .service-box, .expertise-box {
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .service-box:hover, .expertise-box:hover {
+      transform: translateY(-5px);
+    }
+    .service-box h3, .expertise-box h3 {
+      margin-bottom: 10px;
+      color: #5c6ac4;
+    }
+    /* Contact, Office Hours & Location */
+    .contact-info {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #444;
+    }
+    .contact-info h3 {
+      margin: 15px 0 5px;
+      color: #5c6ac4;
+    }
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #5c6ac4;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      nav ul li {
+        margin-left: 10px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header class="container">
+    <div>
+      <img src="spickle-blue.png" alt="Spickle B.V. Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero container">
+    <h1>Empowering Growth & Operational Excellence</h1>
+    <p>
+      Spickle B.V. delivers high-impact interim management, strategic consulting, and project execution solutions tailored for businesses in transition.
+    </p>
+    <a href="#contact">Get in Touch</a>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="row">
+      <div class="col">
+        <div class="service-box">
+          <h3>Interim Management</h3>
+          <p>
+            Seamless integration of experienced COO, CFO, and CEO solutions that rapidly align your operations and drive performance.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="service-box">
+          <h3>Project Consulting</h3>
+          <p>
+            End-to-end management of technology implementations, operational restructuring, and project-based initiatives for agile growth.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="service-box">
+          <h3>Growth & Strategy</h3>
+          <p>
+            In-depth market analysis, innovative strategic planning, and execution frameworks that unlock new opportunities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section id="expertise" class="container">
+    <h2 class="section-title">Our Expertise</h2>
+    <div class="row">
+      <div class="col">
+        <div class="expertise-box">
+          <h3>Web3</h3>
+          <p>
+            Building innovative, blockchain-based solutions to support decentralized finance, governance, and secure data exchange.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="expertise-box">
+          <h3>AI</h3>
+          <p>
+            Leveraging cutting-edge AI models to drive automation, data insights, and predictive analytics for smarter operations.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="expertise-box">
+          <h3>Cloud Services</h3>
+          <p>
+            Delivering secure and scalable cloud infrastructure and services that optimize your IT environment and support rapid growth.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="expertise-box">
+          <h3>E-commerce</h3>
+          <p>
+            Strategizing and optimizing digital commerce to enhance customer experience, drive revenue, and streamline operations.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="expertise-box">
+          <h3>Fintech</h3>
+          <p>
+            Providing innovative solutions in financial technology that improve security, efficiency, and trust in digital finance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h2 class="section-title">About Spickle B.V.</h2>
+    <div class="info-section">
+      <p>
+        Spickle B.V. is a dynamic management consultancy dedicated to empowering businesses with flexible, expert-led operational guidance.
+        Our approach blends deep industry insights with innovative strategies to drive sustainable growth and operational excellence.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="info-section">
+      <p>
+        Interested in partnering with us? Whether you need interim management, project consulting, or strategic guidance, we’re here to help.
+      </p>
+      <p>
+        Email: <a href="mailto:info@spickle.com">info@spickle.com</a><br>
+        Phone: +31 20 123 4567
+      </p>
+      <div class="contact-info">
+        <h3>Operating Hours</h3>
+        <p>Monday – Friday: 09:00 – 17:00</p>
+      </div>
+      <div class="contact-info">
+        <h3>Our Office</h3>
+        <p>
+          Arnhemsestraat 33<br>
+          2587 SP, The Hague, Netherlands
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container">
+    <p>
+      © 2025 Spickle B.V. – All Rights Reserved.
+    </p>
+  </footer>
+</body>
+</html>
