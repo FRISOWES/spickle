@@ -4,102 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Spickle B.V. | Transforming Operations</title>
+
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" 
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Reset & Base */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Roboto', -apple-system, sans-serif; color: #222; background: #f8f8f8; }
+    /* ----------  Base & Reset ---------- */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Roboto',-apple-system,sans-serif;color:#222;background:#f8f8f8}
 
-    /* Header */
-    header { background: #fff; position: sticky; top: 0; z-index:100; border-bottom:1px solid #eaeaea; }
-    .nav-container { max-width:1200px; margin:0 auto; padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; }
-    .nav-logo img { height:100px; }
-    nav ul { list-style:none; display:flex; gap:1.5rem; }
-    nav a { text-decoration:none; color:#333; font-weight:500; transition:color .3s; }
-    nav a:hover { color:#5c6ac4; }
+    /* ----------  Header ---------- */
+    header{background:#fff;position:sticky;top:0;z-index:100;border-bottom:1px solid #eaeaea}
+    .nav-container{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo img{height:100px}
+    nav ul{list-style:none;display:flex;gap:1.5rem}
+    nav a{text-decoration:none;color:#333;font-weight:500;transition:color .3s}
+    nav a:hover{color:#5c6ac4}
 
-    /* Hero */
-    .hero { position:relative; height:80vh; background:url('banner.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; text-align:center; }
-    .hero::after { content:""; position:absolute; inset:0; background:rgba(0,0,0,.4); }
-    .hero-content { position:relative; z-index:1; color:#fff; max-width:800px; padding:0 1rem; }
-    .hero-content h1 { font-size:3rem; margin-bottom:1rem; line-height:1.2; }
-    .hero-content p { font-size:1.25rem; margin-bottom:2rem; }
-    .hero-content .btn { background:#5c6ac4; color:#fff; padding:.75rem 2rem; border-radius:30px; text-decoration:none; transition:background .3s, transform .3s; }
-    .hero-content .btn:hover { background:#4f5aae; transform:translateY(-3px); }
+    /* ----------  Hero ---------- */
+    .hero{position:relative;height:80vh;background:url('banner.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.4)}
+    .hero-content{position:relative;z-index:1;color:#fff;max-width:800px;padding:0 1rem}
+    .hero-content h1{font-size:3rem;margin-bottom:1rem;line-height:1.2}
+    .hero-content p{font-size:1.25rem;margin-bottom:2rem}
+    .btn{background:#5c6ac4;color:#fff;padding:.75rem 2rem;border-radius:30px;text-decoration:none;transition:background .3s,transform .3s}
+    .btn:hover{background:#4f5aae;transform:translateY(-3px)}
 
-    /* Buzz Words */
-    .buzz { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin:3rem auto; max-width:900px; }
-    .buzz .item { flex:1 1 150px; font-weight:500; color:#5c6ac4; font-size:1.1rem; text-align:center; }
+    /* ----------  Buzz Words ---------- */
+    .buzz{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin:3rem auto;max-width:900px}
+    .buzz .item{flex:1 1 150px;font-weight:500;color:#5c6ac4;font-size:1.1rem;text-align:center}
 
-    /* Callout */
-    .callout { background:#5c6ac4; color:#fff; text-align:center; padding:2rem 1rem; }
-    .callout h2 { font-size:1.75rem; margin-bottom:1rem; }
-    .callout a { display:inline-block; background:#fff; color:#5c6ac4; padding:.75rem 2rem; border-radius:30px; text-decoration:none; font-weight:500; transition:background .3s, color .3s; }
-    .callout a:hover { background:#e8e8ee; color:#333; }
+    /* ----------  Callout ---------- */
+    .callout{background:#5c6ac4;color:#fff;text-align:center;padding:2rem 1rem}
+    .callout h2{font-size:1.75rem;margin-bottom:1rem}
 
-    /* Section Titles */
-    .section-title { text-align:center; font-size:2.5rem; margin:80px 0 40px; color:#222; }
+    /* ----------  Common Section ---------- */
+    .section-title{text-align:center;font-size:2.5rem;margin:80px 0 40px;color:#222}
+    .content-container{max-width:1200px;margin:0 auto;padding:0 20px}
 
-    /* Card Grid */
-    .content-container { max-width:1200px; margin:0 auto; padding:0 20px; }
-    .card-grid { display:grid; gap:40px; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); margin-bottom:80px; }
-    .card { background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.05); padding:40px 20px; text-align:center; transition:transform .3s, box-shadow .3s; }
-    .card:hover { transform:translateY(-10px); box-shadow:0 8px 24px rgba(0,0,0,0.1); }
-    .card h3 { font-size:1.5rem; margin-bottom:15px; color:#5c6ac4; }
-    .card p { color:#666; line-height:1.5; }
+    /* ----------  Cards ---------- */
+    .card-grid{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-bottom:80px}
+    .card{background:#fff;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.05);padding:40px 20px;text-align:center;transition:transform .3s,box-shadow .3s}
+    .card:hover{transform:translateY(-10px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+    .card h3{font-size:1.5rem;margin-bottom:15px;color:#5c6ac4}
+    .card p{color:#666;line-height:1.5}
 
-    /* Clients Section */
-    .client-section { margin-bottom:80px; }
-    .client-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; align-items:center; }
-    .client-grid img { max-height:60px; width:auto; filter:grayscale(100%); transition:filter .3s; }
-    .client-grid img:hover { filter:none; }
+    /* ----------  Tables ---------- */
+    table{width:100%;border-collapse:collapse;margin:40px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+    th,td{padding:16px;text-align:left}
+    th{background:#5c6ac4;color:#fff;font-weight:500}
+    tr:nth-child(even){background:#f8f8f8}
+    tr:hover{background:#e8e8ee}
 
-    /* About */
-    .about-section { display:flex; flex-wrap:wrap; gap:40px; background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.05); padding:60px 40px; margin-bottom:80px; }
-    .about-text { flex:1; min-width:280px; }
-    .about-text h2 { font-size:2rem; margin-bottom:20px; color:#222; }
-    .about-text p { font-size:1.1rem; color:#555; line-height:1.7; }
-    .about-image { flex:1; min-width:280px; text-align:center; }
-    .about-image img { width:200px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.1); }
+    /* ----------  Client Logos ---------- */
+    .client-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin:20px 0}
+    .client-logos img{max-height:60px;width:auto;filter:grayscale(100%);transition:filter .3s}
+    .client-logos img:hover{filter:none}
 
-    /* Contact */
-    .contact-section { background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.05); padding:60px 40px; margin-bottom:80px; }
-    .contact-details { text-align:center; display:flex; flex-direction:column; gap:20px; }
-    .contact-details h3 { color:#5c6ac4; font-size:1.5rem; }
-    .contact-details p, .contact-details a { font-size:1rem; color:#555; text-decoration:none; }
-    .contact-details a:hover { color:#4f5aae; }
+    /* ----------  About ---------- */
+    .about-section{background:#fff;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.05);padding:60px 40px;margin-bottom:80px}
+    .about-section img{display:block;margin:0 auto 20px;width:200px}
 
-    /* Footer */
-    footer { background:#333; color:#fff; text-align:center; padding:40px 20px; }
-    footer p { font-size:.9rem; }
+    /* ----------  Contact ---------- */
+    .contact-section{background:#fff;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.05);padding:60px 40px;margin-bottom:80px}
+    .contact-details{text-align:center;display:flex;flex-direction:column;gap:20px}
+    .contact-details h3{color:#5c6ac4;font-size:1.5rem}
+    .contact-details p,.contact-details a{font-size:1rem;color:#555;text-decoration:none}
+    .contact-details a:hover{color:#4f5aae}
 
-    /* Responsive */
-    @media(max-width:768px) {
-      .hero-content h1 { font-size:2.5rem; }
-      .hero-content p { font-size:1rem; }
+    /* ----------  Footer ---------- */
+    footer{background:#333;color:#fff;text-align:center;padding:40px 20px}
+    footer p{font-size:.9rem}
+
+    /* ----------  Responsive ---------- */
+    @media(max-width:768px){
+      .hero-content h1{font-size:2.5rem}
+      .hero-content p{font-size:1rem}
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ===== Header ===== -->
   <header>
     <div class="nav-container">
-      <div class="nav-logo">
-        <img src="spickle-blue.png" alt="Spickle B.V. Logo">
-      </div>
+      <div class="nav-logo"><img src="spickle-blue.png" alt="Spickle B.V. Logo"></div>
       <nav>
         <ul>
           <li><a href="#hero">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#expertise">Expertise</a></li>
-          <li><a href="#clients">Clients</a></li>
+          <li><a href="#clients">Experience</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -107,7 +105,7 @@
     </div>
   </header>
 
-  <!-- Hero with Banner -->
+  <!-- ===== Hero ===== -->
   <section class="hero" id="hero">
     <div class="hero-content">
       <h1>Transforming Operations with Next‑Gen Expertise</h1>
@@ -116,102 +114,148 @@
     </div>
   </section>
 
-  <!-- Buzz Words -->
+  <!-- ===== Buzz Words ===== -->
   <div class="buzz">
-    <div class="item">Strategic Leadership</div>
-    <div class="item">Seamless Execution</div>
-    <div class="item">Data‑Driven Decisions</div>
-    <div class="item">Scalable Solutions</div>
-    <div class="item">Future‑Proof Growth</div>
+    <div class="item">Strategic&nbsp;Leadership</div>
+    <div class="item">Seamless&nbsp;Execution</div>
+    <div class="item">Data‑Driven&nbsp;Decisions</div>
+    <div class="item">Scalable&nbsp;Solutions</div>
+    <div class="item">Future‑Proof&nbsp;Growth</div>
   </div>
 
-  <!-- Call to Action Strip -->
+  <!-- ===== Callout ===== -->
   <section class="callout">
     <h2>Ready to Elevate Your Business?</h2>
-    <a href="#contact">Book Your Free 30‑Minute Consultation →</a>
+    <a href="#contact" class="btn">Book Your Free 30‑Minute Consultation →</a>
   </section>
 
-  <!-- Services Section -->
+  <!-- ===== Services ===== -->
   <section id="services">
     <h2 class="section-title">Our Services</h2>
     <div class="content-container">
       <div class="card-grid">
         <div class="card">
           <h3>Interim Management</h3>
-          <p>Seamless integration of experienced COO/CFO/CEO solutions to align operations and drive peak performance.</p>
+          <p>COO/CFO/CEO leadership to align operations and drive performance.</p>
         </div>
         <div class="card">
           <h3>Project Consulting</h3>
-          <p>Expert-led project management that reshapes operations and supports agile growth.</p>
+          <p>Expert project delivery for tech implementations and restructuring.</p>
         </div>
         <div class="card">
           <h3>Growth & Strategy</h3>
-          <p>Innovative market analysis and strategic planning to unlock new opportunities and drive sustainable growth.</p>
+          <p>Market analysis and strategic planning for sustainable expansion.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Expertise Section -->
+  <!-- ===== Expertise ===== -->
   <section id="expertise">
     <h2 class="section-title">Our Expertise</h2>
     <div class="content-container">
       <div class="card-grid">
-        <div class="card"><h3>Web3</h3><p>Cutting-edge blockchain solutions for decentralized finance, governance, and secure data exchange.</p></div>
-        <div class="card"><h3>AI</h3><p>Transforming data into actionable insights with advanced AI models and predictive analytics.</p></div>
-        <div class="card"><h3>Cloud Services</h3><p>Scalable and secure cloud infrastructure services designed to optimize performance and flexibility.</p></div>
-        <div class="card"><h3>E-commerce</h3><p>Driving digital commerce success through user-centric design, robust platforms, and data-driven insights.</p></div>
-        <div class="card"><h3>Fintech</h3><p>Innovative solutions in financial technology that streamline security, efficiency, and transactional reliability.</p></div>
+        <div class="card"><h3>Web3</h3><p>Blockchain solutions for DeFi, governance, and secure data exchange.</p></div>
+        <div class="card"><h3>AI</h3><p>Advanced machine learning for automation and predictive insights.</p></div>
+        <div class="card"><h3>Cloud Services</h3><p>Scalable infrastructure for AI fine‑tuning and cost‑efficient hosting.</p></div>
+        <div class="card"><h3>E‑commerce</h3><p>User‑centric commerce strategies powered by data‑driven insights.</p></div>
+        <div class="card"><h3>Fintech</h3><p>Innovative digital‑finance platforms and alternative‑data credit scoring.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Clients Section -->
-  <section id="clients" class="client-section">
-    <h2 class="section-title">Clients & Experience</h2>
-    <div class="content-container">
-      <div class="client-grid">
-        <img src="Alibaba_logo.png" alt="Alibaba Group">
-        <img src="Koko_logo.png" alt="Koko">
-        <img src="Daraz_Logo.png" alt="Daraz Group">
-        <img src="Volero_logo.svg" alt="Volero">
-        <img src="Vertical_Logo.svg" alt="Vertical AI">
-      </div>
+  <!-- ===== Experience (Clients) ===== -->
+  <section id="clients" class="content-container">
+    <h2 class="section-title">Experience</h2>
+
+    <!-- Logo strip (optional) -->
+    <div class="client-logos">
+      <img src="Alibaba_logo.png"  alt="Alibaba Group">
+      <img src="Koko_logo.png"     alt="Koko">
+      <img src="Daraz_logo.png"    alt="Daraz Group">
+      <img src="Volero_logo.svg"   alt="Volero">
+      <img src="Vertical_Logo.svg" alt="Vertical AI">
     </div>
+
+    <!-- Detailed table -->
+    <table>
+      <thead>
+        <tr><th>Organization</th><th>Role &amp; Period</th><th>Key Contributions</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alibaba&nbsp;Group</td>
+          <td>Strategy Lead&nbsp;(2018‑2019)</td>
+          <td>Built South‑Asia financial‑services roadmap.</td>
+        </tr>
+        <tr>
+          <td>Daraz&nbsp;Group</td>
+          <td>Global Head&nbsp;of FS&nbsp;(2019‑2021)</td>
+          <td>Scaled digital lending &amp; payments across 5 markets.</td>
+        </tr>
+        <tr>
+          <td>Koko&nbsp;Group</td>
+          <td>Co‑founder &amp; COO&nbsp;(2021‑2023)</td>
+          <td>Pioneered alternative‑data credit scoring for underserved consumers.</td>
+        </tr>
+        <tr>
+          <td>Volero</td>
+          <td>Consultant&nbsp;(2023)</td>
+          <td>Delivered demand forecasting &amp; operational planning for D2C scale‑up.</td>
+        </tr>
+        <tr>
+          <td>Vertical&nbsp;AI</td>
+          <td>Interim COO&nbsp;(2024‑Present)</td>
+          <td>Launched decentralized GPU network &amp; AI model marketplace.</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2 class="section-title">About Spickle</h2>
-    <div class="content-container about-section">
-      <div class="about-text">
-        <p>Spickle B.V. is a dynamic management consultancy that fuses deep industry expertise with innovative strategies. We empower businesses to excel with flexible and high-impact operational solutions, tailored to each client’s unique challenges.</p>
-      </div>
-      <div class="about-image">
-        <img src="spickle-offwhite.png" alt="Spickle B.V. Logo Off-White">
-      </div>
-    </div>
+  <!-- ===== About ===== -->
+  <section id="about" class="about-section">
+    <h2 class="section-title">About&nbsp;Friso&nbsp;Wesseling &amp; Spickle&nbsp;B.V.</h2>
+    <img src="spickle-offwhite.png" alt="Spickle Off‑white Logo">
+
+    <table>
+      <thead>
+        <tr><th>Founded</th><th>Education</th><th>Industry Focus</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025 – Spickle B.V. founded by Friso&nbsp;Wesseling</td>
+          <td>
+            LL.B Law&nbsp;&amp;&nbsp;Economics&nbsp;<br>
+            BSc Business&nbsp;Economics – Utrecht University<br>
+            MSc Management&nbsp;of&nbsp;Innovation
+          </td>
+          <td>
+            Blockchain&nbsp;since&nbsp;2017<br>
+            E‑commerce&nbsp;&amp;&nbsp;Fintech&nbsp;since&nbsp;2019<br>
+            AI&nbsp;&amp;&nbsp;Cloud&nbsp;Services&nbsp;since&nbsp;2024
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="contact-section">
     <h2 class="section-title">Contact Us</h2>
-    <div class="content-container contact-section">
-      <div class="contact-details">
-        <h3>Get in Touch</h3>
-        <p>Email: <a href="mailto:friso@spickle.nl">friso@spickle.nl</a></p>
-        <p>Phone: +31 6 43 515 977</p>
-        <div><h3>Office Hours</h3><p>Monday – Friday: 09:00 – 17:00</p></div>
-        <div><h3>Our Office</h3><p>Arnhemsestraat 33<br>2587 SP, The Hague, Netherlands</p></div>
+    <div class="contact-details">
+      <h3>Get in Touch</h3>
+      <p>Email: <a href="mailto:friso@spickle.nl">friso@spickle.nl</a></p>
+      <p>Phone: <a href="tel:+31643515977">+31&nbsp;6&nbsp;43&nbsp;515&nbsp;977</a></p>
+      <div>
+        <h3>Our Office</h3>
+        <p>Arnhemsestraat&nbsp;33<br>2587&nbsp;SP, The&nbsp;Hague, Netherlands</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ===== Footer ===== -->
   <footer>
-    <div class="content-container">
-      <p>© 2025 Spickle B.V. – All Rights Reserved.</p>
-    </div>
+    <p>©&nbsp;2025&nbsp;Spickle&nbsp;B.V.&nbsp;–&nbsp;All Rights Reserved.</p>
   </footer>
 
 </body>
