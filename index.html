@@ -3,127 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spickle B.V.</title>
-
-<!-- Google Font -->
+<title>Spickle B.V.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
 <style>
 /* ----------  Base ---------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Roboto',-apple-system,sans-serif;color:#222;background:#f8f8f8}
-h1,h2,h3{line-height:1.2} a{color:#0066cc;text-decoration:none}
-a:hover{text-decoration:underline}
+body{font-family:'Roboto',-apple-system,sans-serif;color:#222;background:#f8f8f8;line-height:1.6}
+h1,h2,h3{line-height:1.3}
+a{color:#0066cc;text-decoration:none}a:hover{text-decoration:underline}
+
+/* ----------  Layout Helpers ---------- */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+@media(max-width:768px){.section{padding:60px 0}}
+.text-center{text-align:center}
+.mb-40{margin-bottom:40px}
 
 /* ----------  Header ---------- */
-header{background:#fff;position:sticky;top:0;z-index:100;border-bottom:1px solid #eaeaea}
-.nav-container{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
-.nav-logo img{height:100px}
-nav ul{list-style:none;display:flex;gap:1.5rem}
+header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e7eb}
+header .inner{display:flex;align-items:center;justify-content:space-between;padding:20px 24px}
+.logo img{height:90px}
+nav ul{display:flex;gap:32px;list-style:none}
 nav a{font-weight:500}
-
-/* mobile nav toggle */
-#menu-toggle{display:none}
-#menu-toggle+label{display:none}
-
-@media(max-width:768px){
-  header{padding:15px 20px}
-  nav{display:none;flex-direction:column;background:#fff;position:absolute;top:100%;right:20px;border:1px solid #ddd;box-shadow:0 2px 5px rgba(0,0,0,.1)}
-  nav a{margin:10px 0}
-  #menu-toggle:checked~nav{display:flex;padding:10px 20px}
-  #menu-toggle+label{display:flex;flex-direction:column;width:30px;height:22px;justify-content:space-between;cursor:pointer}
-  #menu-toggle+label span{height:3px;background:#333;border-radius:3px}
-}
+#toggle{display:none}
+label.hamburger{display:none;cursor:pointer;flex-direction:column;justify-content:space-between;height:22px;width:30px}
+label.hamburger span{display:block;height:3px;background:#333;border-radius:3px}
+@media(max-width:768px){nav ul{position:absolute;top:100%;right:24px;flex-direction:column;background:#fff;border:1px solid #ddd;padding:16px 24px;display:none;box-shadow:0 4px 16px rgba(0,0,0,.05)}nav ul a{margin:8px 0}#toggle:checked+label+ul{display:flex}label.hamburger{display:flex}}
 
 /* ----------  Hero ---------- */
-#hero{position:relative;min-height:100vh;background:url('banner.jpg') center/cover no-repeat;background-attachment:fixed;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
-@media(max-width:768px){#hero{background-attachment:scroll}}
-#hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.5)}
-.hero-content{position:relative;z-index:1;max-width:800px;padding:0 20px}
-.hero-content h1{font-size:3em;font-weight:700;margin-bottom:.5em}
-.hero-content p{font-size:1.2em;margin-bottom:1.5em}
-.btn{background:#5c6ac4;color:#fff;padding:.75rem 2rem;border-radius:30px;transition:background .3s,transform .3s}
-.btn:hover{background:#4f5aae;transform:translateY(-3px)}
-
-/* ----------  Sections ---------- */
-section{padding:60px 40px}
-@media(max-width:768px){section{padding:40px 20px}}
-.section-title{text-align:center;font-size:2.5rem;margin:80px 0 40px;color:#222;position:relative;display:inline-block;width:100%}
-.section-title::after{content:'';display:block;width:50px;height:4px;background:#0066cc;margin:8px auto 0}
-
-.content-container{max-width:1200px;margin:0 auto;padding:0 20px}
+#hero{background:url('banner.jpg') center/cover no-repeat fixed;min-height:100vh;display:flex;align-items:center;color:#fff;text-align:center;position:relative}
+#hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5)}
+.hero-content{position:relative;z-index:1;width:100%}
+.hero-content h1{font-size:3rem;font-weight:700;margin-bottom:16px}
+.hero-content p{font-size:1.2rem;margin-bottom:32px}
+.btn{display:inline-block;background:#5c6ac4;color:#fff;padding:12px 32px;border-radius:30px;font-weight:500;transition:.3s}
+.btn:hover{background:#4f5aae;transform:translateY(-2px)}
+@media(max-width:768px){#hero{background-attachment:scroll}.hero-content h1{font-size:2.25rem}.hero-content p{font-size:1rem}}
 
 /* ----------  Buzz ---------- */
-.buzz{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin:3rem auto;max-width:900px}
-.buzz .item{flex:1 1 150px;font-weight:500;color:#5c6ac4;font-size:1.1rem;text-align:center}
+.buzz{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:40px auto 0;max-width:900px}
+.tag{background:#e0e0e0;color:#333;padding:10px 18px;border-radius:24px;font-weight:500;font-size:.95rem}
 
-/* ----------  Callout ---------- */
-.callout{background:#5c6ac4;color:#fff;text-align:center;padding:2rem 1rem}
-.callout h2{font-size:1.75rem;margin-bottom:1rem}
+/* ----------  Section Titles ---------- */
+.section-title{font-size:2.25rem;margin-bottom:16px;position:relative;display:inline-block}
+.section-title::after{content:"";display:block;width:48px;height:4px;background:#0066cc;margin:8px auto 0}
 
 /* ----------  Cards ---------- */
-.card-grid{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-bottom:80px}
-.card{background:#fff;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.05);padding:40px 20px;text-align:center;transition:transform .3s,box-shadow .3s}
-.card:hover{transform:translateY(-10px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
-.card h3{font-size:1.5rem;margin-bottom:.5em;color:#5c6ac4}
-.card p{color:#666}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;margin-top:48px}
+.card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 16px rgba(0,0,0,.05);transition:.3s}
+.card:hover{transform:translateY(-8px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.card h3{font-size:1.4rem;margin-bottom:12px;color:#5c6ac4}
+.card p{font-size:.95rem}
 
-/* ----------  Tables ---------- */
-table{width:100%;border-collapse:collapse;margin:40px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05)}
-th,td{padding:16px;text-align:left}
-th{background:#5c6ac4;color:#fff;font-weight:500}
-tr:nth-child(even){background:#f8f8f8}
-tr:hover{background:#e8e8ee}
+/* ----------  Expertise Chips ---------- */
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}
+.chips li{list-style:none;background:#f1f1f1;padding:8px 18px;border-radius:20px;font-size:.9rem;font-weight:500}
 
-/* ----------  Expertise chips ---------- */
-.expertise-list{list-style:none;padding:0;margin-top:20px;text-align:center}
-.expertise-list li{display:inline-block;background:#e0e0e0;color:#333;padding:8px 15px;margin:5px;border-radius:20px;font-weight:500;font-size:.9em}
-
-/* ----------  Client logos ---------- */
-.clients-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:40px}
-.clients-logos img{max-height:50px;max-width:120px;filter:grayscale(100%) opacity(.6);transition:filter .3s,opacity .3s}
-.clients-logos img:hover{filter:none;opacity:1}
+/* ----------  Clients ---------- */
+.logo-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:48px}
+.logo-bar img{max-height:50px;filter:grayscale(100%) opacity(.6);transition:.3s}
+.logo-bar img:hover{filter:none;opacity:1}
 
 /* ----------  About ---------- */
-.about-section{background:#fff;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.05);padding:60px 40px;margin-bottom:80px;text-align:center}
-.about-section img{width:200px;margin:0 auto 20px}
+.about-img{width:200px;margin:0 auto 24px}
+.about-table td{vertical-align:top;padding:8px 0}
+.about-table strong{display:block}
 
 /* ----------  Contact ---------- */
-#contact{background:#0066cc;color:#fff;text-align:center}
-.contact-details{display:flex;flex-direction:column;gap:15px}
-.contact-details a{color:#fff;font-weight:500}
+#contact{background:#0066cc;color:#fff;border-radius:8px}
+.contact-list p{margin:6px 0;font-size:1rem}
+.contact-list a{color:#fff;font-weight:500}
 
 /* ----------  Footer ---------- */
-footer{text-align:center;padding:20px;font-size:.9em;color:#777}
+footer{text-align:center;padding:24px;font-size:.9rem;color:#777}
 
-/* ----------  Fade-in on Scroll ---------- */
-@keyframes fadeUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
-.fade{opacity:0;transform:translateY(20px)}
-.fade.visible{animation:fadeUp .8s forwards}
+/* ----------  Fade Animation ---------- */
+@keyframes fadeUp{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:none}}
+.fade{opacity:0;transform:translateY(24px)}.fade.visible{animation:fadeUp .7s forwards}
 </style>
 <script>
-/* Fade-in observer */
-document.addEventListener('DOMContentLoaded',()=>{
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
- },{threshold:.1});
-  document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+// Intersection Observer for fade‑in
+window.addEventListener('DOMContentLoaded',()=>{
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')), {threshold:.15});
+  document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 });
 </script>
 </head>
 <body>
 
-<!-- ===== Header ===== -->
-<header>
-  <div class="nav-container">
-    <div class="nav-logo"><img src="spickle-blue.png" alt="Spickle B.V."></div>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle"><span></span><span></span><span></span></label>
+<!-- ==========  Header  ========== -->
+<header class="fade">
+  <div class="inner nav-container">
+    <div class="logo"><img src="spickle-blue.png" alt="Spickle B.V."></div>
+    <input type="checkbox" id="toggle">
+    <label for="toggle" class="hamburger"><span></span><span></span><span></span></label>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
@@ -136,84 +112,106 @@ document.addEventListener('DOMContentLoaded',()=>{
   </div>
 </header>
 
-<!-- ===== Hero ===== -->
+<!-- ==========  Hero  ========== -->
 <section id="hero" class="fade">
-  <div class="hero-content">
+  <div class="hero-content container">
     <h1>Driving Growth &amp; Innovation</h1>
-    <p>Hands‑on leadership and strategy for Web3, AI, Cloud, E‑commerce, and Fintech innovators.</p>
+    <p>Hands‑on leadership and strategy for Web3, AI, Cloud, E‑commerce, and Fintech innovators.</p>
     <a href="#about" class="btn">Discover More</a>
   </div>
 </section>
 
-<!-- ===== Buzz ===== -->
-<div class="buzz fade">
-  <div class="item">Strategic&nbsp;Leadership</div>
-  <div class="item">Seamless&nbsp;Execution</div>
-  <div class="item">Data‑Driven&nbsp;Insights</div>
-  <div class="item">Scalable&nbsp;Solutions</div>
-  <div class="item">Future‑Proof&nbsp;Growth</div>
+<!-- ==========  Buzz  ========== -->
+<div class="container">
+  <div class="buzz fade mb-40">
+    <span class="tag">Strategic Leadership</span>
+    <span class="tag">Seamless Execution</span>
+    <span class="tag">Data‑Driven Insights</span>
+    <span class="tag">Scalable Solutions</span>
+    <span class="tag">Future‑Proof Growth</span>
+  </div>
 </div>
 
-<!-- ===== Callout ===== -->
-<section class="callout fade">
-  <h2>Ready to Elevate Your Business?</h2>
-  <a href="#contact" class="btn">Book a Call →</a>
+<!-- ==========  About  ========== -->
+<section id="about" class="section fade">
+  <div class="container text-center">
+    <h2 class="section-title">About Spickle</h2>
+    <img src="spickle-offwhite.png" alt="Spickle Logo" class="about-img">
+    <p class="mb-40">Founded in 2025 by Friso Wesseling, Spickle B.V. is a boutique consultancy delivering interim leadership and strategic expertise at the intersection of technology and innovation.</p>
+    <table class="about-table" style="margin:0 auto;max-width:800px;font-size:.95rem;text-align:left">
+      <tr>
+        <td style="padding-right:24px"><strong>Founder &amp; Background</strong></td>
+        <td>Former Global Head of Financial Services at Daraz (Alibaba Group), co‑founder &amp; COO at fintech pioneer Koko, Interim COO at Vertical AI.</td>
+      </tr>
+      <tr>
+        <td style="padding-right:24px"><strong>Education</strong></td>
+        <td>LL.B Law &amp; Economics and BSc Business Economics — Utrecht University<br>MSc Management of Innovation</td>
+      </tr>
+      <tr>
+        <td style="padding-right:24px"><strong>Focus Timeline</strong></td>
+        <td>Blockchain (2017‑)</td>
+      </tr>
+      <tr>
+        <td></td><td>E‑commerce &amp; Fintech (2019‑)</td>
+      </tr>
+      <tr>
+        <td></td><td>AI &amp; Cloud Services (2024‑)</td>
+      </tr>
+    </table>
+  </div>
 </section>
 
-<!-- ===== About ===== -->
-<section id="about" class="about-section fade">
-  <h2 class="section-title">About Spickle</h2>
-  <img src="spickle-offwhite.png" alt="Spickle Logo">
-  <p>Spickle B.V. was founded in 2025 by Friso Wesseling, former Global Head of Financial Services at Daraz (Alibaba Group) and co‑founder & COO of fintech pioneer Koko. We deliver interim leadership and strategic consulting that turn ambitious plans into measurable results.</p>
-</section>
-
-<!-- ===== Services ===== -->
-<section id="services" class="fade">
-  <h2 class="section-title">Services</h2>
-  <div class="content-container">
-    <div class="card-grid">
-      <div class="card"><h3>Interim Management</h3><p>COO/CFO/CEO expertise to align teams &amp; accelerate execution during transitions.</p></div>
-      <div class="card"><h3>Project Consulting</h3><p>End‑to‑end project leadership for technology roll‑outs, restructuring &amp; growth initiatives.</p></div>
-      <div class="card"><h3>Growth Strategy</h3><p>Market research, data analytics &amp; GTM roadmaps that unlock sustainable expansion.</p></div>
+<!-- ==========  Services  ========== -->
+<section id="services" class="section fade">
+  <div class="container text-center">
+    <h2 class="section-title">Services</h2>
+    <div class="cards">
+      <div class="card"><h3>Interim Management</h3><p>COO/CFO/CEO leadership to align operations and boost performance during transitions.</p></div>
+      <div class="card"><h3>Project Consulting</h3><p>End‑to‑end delivery for tech roll‑outs, restructuring, and growth programmes.</p></div>
+      <div class="card"><h3>Growth Strategy</h3><p>Data‑driven GTM, market expansion, and operational scaling for sustained growth.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== Expertise ===== -->
-<section id="expertise" class="fade">
-  <h2 class="section-title">Expertise</h2>
-  <p class="content-container">Deep, hands‑on experience across today’s most transformative technology domains:</p>
-  <ul class="expertise-list">
-    <li>Web3</li><li>Artificial Intelligence</li><li>Cloud Infrastructure</li><li>E‑commerce</li><li>Fintech</li>
-  </ul>
-</section>
-
-<!-- ===== Clients / Experience ===== -->
-<section id="clients" class="fade">
-  <h2 class="section-title">Experience</h2>
-  <p>Selected companies we have built, led, or supported:</p>
-  <div class="clients-logos">
-    <img src="Alibaba_logo.png"  alt="Alibaba Group">
-    <img src="Daraz_Logo.png"    alt="Daraz">
-    <img src="Koko_logo.png"     alt="Koko">
-    <img src="Volero_logo.svg"   alt="Volero">
-    <img src="Vertical_Logo.svg" alt="Vertical AI">
+<!-- ==========  Expertise  ========== -->
+<section id="expertise" class="section fade" style="background:#f9f9f9">
+  <div class="container text-center">
+    <h2 class="section-title">Expertise</h2>
+    <p class="mb-40">Deep, hands‑on experience across today’s most transformative technology stacks and business models.</p>
+    <ul class="chips">
+      <li>Web3</li><li>Artificial Intelligence</li><li>Cloud Infrastructure</li><li>E‑commerce</li><li>Fintech</li>
+    </ul>
   </div>
 </section>
 
-<!-- ===== Contact ===== -->
-<section id="contact" class="content-container fade" style="background:#0066cc;color:#fff;text-align:center;border-radius:8px;">
-  <h2 class="section-title" style="color:#fff;">Contact</h2>
-  <div class="contact-details">
+<!-- ==========  Clients  ========== -->
+<section id="clients" class="section fade">
+  <div class="container text-center">
+    <h2 class="section-title">Clients &amp; Experience</h2>
+    <p class="mb-40">Companies we’ve built, led, or supported on their growth journeys:</p>
+    <div class="logo-bar">
+      <img src="Alibaba_logo.png" alt="Alibaba Group">
+      <img src="Daraz_Logo.png" alt="Daraz">
+      <img src="Koko_logo.png" alt="Koko">
+      <img src="Volero_logo.svg" alt="Volero">
+      <img src="Vertical_Logo.svg" alt="Vertical AI">
+    </div>
+  </div>
+</section>
+
+<!-- ==========  Contact  ========== -->
+<section id="contact" class="section fade" style="background:#0066cc;color:#fff;border-radius:8px 8px 0 0">
+  <div class="container contact-list text-center">
+    <h2 class="section-title" style="color:#fff">Contact</h2>
     <p>Email: <a href="mailto:friso@spickle.nl">friso@spickle.nl</a></p>
-    <p>Phone: <a href="tel:+31643515977">+31 6 43 515 977</a></p>
-    <p>Arnhemsestraat 33, 2587 SP, The Hague, NL</p>
+    <p>Phone: <a href="tel:+31643515977">+31&nbsp;6&nbsp;43&nbsp;515&nbsp;977</a></p>
+    <p>Arnhemsestraat&nbsp;33, 2587 SP, The Hague, Netherlands</p>
   </div>
 </section>
 
-<!-- ===== Footer ===== -->
-<footer>
-  © 2025 Spickle B.V. — All rights reserved.
+<!-- ==========  Footer  ========== -->
+<footer class="fade" style="background:#f2f2f2">
+  <p>&copy; 2025 Spickle B.V. — All rights reserved.</p>
 </footer>
 
 </body>
