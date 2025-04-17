@@ -38,8 +38,7 @@ section{padding:80px 0}
 
 /* hero (reduced height) */
 #hero{
-  min-height:45vh;                           /* ↓ from 60vh */
-  display:flex;align-items:center;text-align:center;color:#fff;
+  min-height:45vh;display:flex;align-items:center;text-align:center;color:#fff;
   background:radial-gradient(120% 80% at top left,var(--orange-1) 0%,var(--orange-2) 60%,var(--blue) 150%);
 }
 #hero h1{font-size:3rem;font-weight:700;margin-bottom:.6rem}
@@ -61,24 +60,21 @@ summary{font-weight:600;cursor:pointer;list-style:none}
 
 /* bullet‑indent for Services accordion */
 #services details ul{
-  list-style:disc;
-  list-style-position:inside;
-  padding-left:1.75rem;
-  margin:0;
+  list-style:disc;list-style-position:inside;padding-left:1.75rem;margin:0;
 }
 #services details li{padding-inline-start:.35rem}
 
-/* ===== SERVICE ICON SPRITE ===== */
+/* ===== SERVICE ICON SPRITE (2×2 grid, 768×768) ===== */
 .service-icon{
-  display:inline-block;
-  width:28px;height:28px;
-  margin-right:10px;vertical-align:-6px;
-  background:url('services-icons.png') no-repeat 0 0/128px 512px;
+  display:inline-block;width:28px;height:28px;margin-right:10px;vertical-align:-6px;
+  background:url('services-icons.png') no-repeat;
+  background-size:200% 200%;          /* divides sprite into 2×2 quadrants */
+  filter:invert(23%) sepia(88%) saturate(2044%) hue-rotate(201deg) brightness(96%) contrast(104%);
 }
-.icon-interim  {background-position:0    0;}
-.icon-strategy {background-position:0 -128px;}
-.icon-process  {background-position:0 -256px;}
-.icon-scaling  {background-position:0 -384px;}
+.icon-interim  {background-position:0%   0%  ;}
+.icon-strategy {background-position:100% 0%  ;}
+.icon-process  {background-position:0%   100%;}
+.icon-scaling  {background-position:100% 100%;}
 
 /* KPI */
 .kpi{font-size:2.5rem;font-weight:700;color:var(--orange-2);}
@@ -191,10 +187,10 @@ summary{font-weight:600;cursor:pointer;list-style:none}
         <img src="Vertical_Logo.svg" alt="Vertical Studio AI logo" class="case-logo">
         <h3>Vertical Studio AI</h3>
         <ul>
-          <li> First <strong>10 k</strong> app users onboarded</li>
-          <li> $VERTAI token → <strong>$120 m market‑cap</strong>, 12 k holders in 30 days</li>
-          <li> Raised <strong>$4 m</strong> via token launch</li>
-          <li> GTM for Stream, Studio &amp; Cloud · 10 k beta users</li>
+          <li>First <strong>10 k</strong> app users onboarded</li>
+          <li>$VERTAI token → <strong>$120 m market cap</strong>, 12 k holders / 30 days</li>
+          <li>Raised <strong>$4 m</strong> via token sale</li>
+          <li>GTM for Stream, Studio &amp; Cloud · 10 k beta users</li>
         </ul>
       </article>
 
@@ -203,10 +199,9 @@ summary{font-weight:600;cursor:pointer;list-style:none}
         <img src="Daraz_Logo.png" alt="Daraz logo" class="case-logo">
         <h3>Daraz (Alibaba Group)</h3>
         <ul>
-          <li> Scaled Daraz LK to from 15 - 150m USD GMV</li>
-          <li> Global Head of Financial Services</li>
-          <li> Launched first seller‑credit program (BD, PK, LK)</li>
-          <li> Obtained NBFC licence &amp; bank credit lines</li>
+          <li>Global Head of Financial Services</li>
+          <li>Launched seller‑credit in BD, PK &amp; LK</li>
+          <li>Obtained NBFC licence &amp; bank credit lines</li>
         </ul>
       </article>
 
@@ -247,7 +242,9 @@ summary{font-weight:600;cursor:pointer;list-style:none}
 </main>
 
 <footer style="text-align:center;padding:24px;font-size:.9rem;color:#777">
-  © 2025 Spickle B.V. • KvK 90649265 • BTW NL004828530B79
+  © 2025 Spickle B.V. • KvK 90649265 • BTW NL004828530B79 |
+  <a href="privacy.html">Privacy &amp; Cookie Policy</a> | 
+  <a href="terms.html">Terms of Business</a>
 </footer>
 
 <!-- AOS init -->
