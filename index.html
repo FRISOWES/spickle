@@ -94,10 +94,7 @@ summary{font-weight:600;cursor:pointer;list-style:none}
 
 /* ===== INDUSTRY BUBBLES ===== */
 #industries .industry-bubbles{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:24px}
-#industries .industry-bubbles li{
-  list-style:none;background:rgba(255,255,255,.18);padding:12px 28px;border-radius:40px;font-weight:500;
-  box-shadow:0 2px 6px rgba(0,0,0,.15);backdrop-filter:blur(4px)
-}
+#industries .industry-bubbles li{list-style:none;background:rgba(255,255,255,.18);padding:12px 28px;border-radius:40px;font-weight:500;box-shadow:0 2px 6px rgba(0,0,0,.15);backdrop-filter:blur(4px)}
 
 /* motion accessibility */
 @media (prefers-reduced-motion:reduce){
@@ -109,6 +106,14 @@ summary{font-weight:600;cursor:pointer;list-style:none}
   #hero h1{font-size:2.25rem}
   #hero p{font-size:1rem}
 }
+ /* center the headline in the blue “Industries” band */
+#industries h2{
+  text-align:center;
+}
+#services h2{
+  margin-bottom:24px;     /* adjust 16‑32 px to taste */
+}
+  
 </style>
 </head>
 
