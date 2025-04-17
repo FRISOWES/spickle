@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spickle B.V. – Interim Executive Leadership</title>
+<title>Spickle B.V. – Interim Executive Leadership</title>
 <meta name="description" content="Interim CEO & COO expertise, operational strategy and scale‑up playbooks for tech innovators.">
 
 <!-- fonts & AOS -->
@@ -36,9 +36,12 @@ nav a:hover{text-decoration:underline}
 section{padding:80px 0}
 .container{max-width:1100px;margin:auto;padding:0 24px}
 
-/* hero (smaller) */
-#hero{min-height:25vh;display:flex;align-items:center;text-align:center;color:#fff;
-  background:radial-gradient(120% 80% at top left,var(--orange-1) 0%,var(--orange-2) 60%,var(--blue) 150%);}
+/* hero (reduced height) */
+#hero{
+  min-height:45vh;                           /* ↓ from 60vh */
+  display:flex;align-items:center;text-align:center;color:#fff;
+  background:radial-gradient(120% 80% at top left,var(--orange-1) 0%,var(--orange-2) 60%,var(--blue) 150%);
+}
 #hero h1{font-size:3rem;font-weight:700;margin-bottom:.6rem}
 #hero p{font-size:1.2rem;margin-bottom:2rem}
 .btn{display:inline-block;background:#fff;color:var(--blue);padding:14px 34px;border-radius:30px;font-weight:500;transition:.3s}
@@ -65,21 +68,42 @@ summary{font-weight:600;cursor:pointer;list-style:none}
 }
 #services details li{padding-inline-start:.35rem}
 
+/* ===== SERVICE ICON SPRITE ===== */
+.service-icon{
+  display:inline-block;
+  width:28px;height:28px;
+  margin-right:10px;vertical-align:-6px;
+  background:url('services-icons.png') no-repeat 0 0/128px 512px;
+}
+.icon-interim  {background-position:0    0;}
+.icon-strategy {background-position:0 -128px;}
+.icon-process  {background-position:0 -256px;}
+.icon-scaling  {background-position:0 -384px;}
+
 /* KPI */
 .kpi{font-size:2.5rem;font-weight:700;color:var(--orange-2);}
 
 /* round profile photo */
 #about img.profile{
-  max-width:240px;      /* desktop cap                                 */
-  width:60%;            /* responsive on narrow screens                */
-  aspect-ratio:1/1;     /* perfect square                               */
-  border-radius:50%;    /* makes it a circle                            */
-  object-fit:cover;     /* crops nicely inside the circle               */
-  box-shadow:0 4px 20px rgba(0,0,0,.15);
-  margin-left:auto;
+  max-width:240px;width:60%;aspect-ratio:1/1;border-radius:50%;
+  object-fit:cover;box-shadow:0 4px 20px rgba(0,0,0,.15);margin-left:auto;
 }
 
-/* prefers‑reduced‑motion */
+/* ===== CASE‑STUDY GRID ===== */
+.case-grid{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:40px}
+.case-card{background:#fff;border-radius:12px;padding:28px 24px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.case-card h3{margin:12px 0;font-size:1.15rem}
+.case-card ul{list-style:disc;list-style-position:inside;padding-left:1.25rem;margin:0;font-size:.95rem}
+.case-logo{height:60px;width:auto;object-fit:contain;margin-bottom:12px}
+
+/* ===== INDUSTRY BUBBLES ===== */
+#industries .industry-bubbles{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:24px}
+#industries .industry-bubbles li{
+  list-style:none;background:rgba(255,255,255,.18);padding:12px 28px;border-radius:40px;font-weight:500;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);backdrop-filter:blur(4px)
+}
+
+/* motion accessibility */
 @media (prefers-reduced-motion:reduce){
   [data-aos]{opacity:1;transform:none!important}
 }
@@ -88,55 +112,6 @@ summary{font-weight:600;cursor:pointer;list-style:none}
 @media(max-width:768px){
   #hero h1{font-size:2.25rem}
   #hero p{font-size:1rem}
-}
-  /* rounded “bubbles” for the Industries band */
-#industries .industry-bubbles{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-  margin-top:24px;
-}
-
-#industries .industry-bubbles li{
-  list-style:none;
-  background:rgba(255,255,255,.18);  /* translucent white */
-  padding:12px 28px;
-  border-radius:40px;
-  font-weight:500;
-  box-shadow:0 2px 6px rgba(0,0,0,.15);
-  backdrop-filter:blur(4px);         /* subtle glass effect */
-}
-  /* ======== CASE‑STUDY GRID ======== */
-.case-grid{
-  display:grid;
-  gap:32px;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  margin-top:40px;
-}
-
-.case-card{
-  background:#fff;
-  border-radius:12px;
-  padding:28px 24px;
-  text-align:center;
-  box-shadow:0 4px 20px rgba(0,0,0,.08);
-}
-
-.case-card h3{margin:12px 0;font-size:1.15rem}
-.case-card ul{
-  list-style:disc;
-  list-style-position:inside;
-  padding-left:1.25rem;
-  margin:0;
-  font-size:.95rem;
-}
-
-.case-logo{
-  height:60px;
-  width:auto;
-  object-fit:contain;
-  margin-bottom:12px;
 }
 </style>
 </head>
@@ -157,6 +132,7 @@ summary{font-weight:600;cursor:pointer;list-style:none}
 
 <main>
 
+<!-- HERO -->
 <section id="hero" data-aos="fade-up">
   <div class="container">
     <h1>Interim Executive Leadership &amp; Operational Excellence</h1>
@@ -165,129 +141,105 @@ summary{font-weight:600;cursor:pointer;list-style:none}
   </div>
 </section>
 
-<!-- Services -->
+<!-- SERVICES -->
 <section id="services" class="band-grey" data-aos="fade-up">
   <div class="container">
     <h2>Core Services</h2>
 
-<details open>
-  <summary>
-    <span class="service-icon icon-interim"></span>
-    Interim Executive Management (CEO &amp; COO)
-  </summary>
+    <details open>
+      <summary><span class="service-icon icon-interim"></span>Interim Executive Management (CEO &amp; COO)</summary>
       <ul><li>Crisis leadership &amp; continuity</li><li>Board‑level reporting</li></ul>
     </details>
 
     <details>
-  <summary>
-    <span class="service-icon icon-strategy"></span>
-    Operational Strategy &amp; Implementation
-  </summary>
+      <summary><span class="service-icon icon-strategy"></span>Operational Strategy &amp; Implementation</summary>
       <ul><li>30‑day diagnostics &amp; OKRs</li><li>Data‑driven roadmaps with KPIs</li></ul>
     </details>
 
     <details>
-  <summary>
-    <span class="service-icon icon-process"></span>Process Improvement &amp; Efficiency </summary>
+      <summary><span class="service-icon icon-process"></span>Process Improvement &amp; Efficiency</summary>
       <ul><li>Workflow redesign &amp; automation</li><li>10‑30 % cost‑to‑serve reduction</li></ul>
     </details>
 
-    <<details>
-  <summary>
-    <span class="service-icon icon-scaling"></span>Scaling &amp; Growth Strategies </summary>
+    <details>
+      <summary><span class="service-icon icon-scaling"></span>Scaling &amp; Growth Strategies</summary>
       <ul><li>Market‑entry playbooks</li><li>Org design &amp; talent scale‑up</li></ul>
     </details>
   </div>
 </section>
 
-<!-- Industries -->
+<!-- INDUSTRIES -->
 <section id="industries" class="band-blue" data-aos="fade-up">
   <div class="container">
     <h2>Industries &amp; Expertise</h2>
     <ul class="industry-bubbles">
-  <li>AI &amp; Automation</li>
-  <li>FinTech &amp; Payments</li>
-  <li>High‑Growth Start‑ups</li>
-</ul>
-  </div>
-</section>
-  
-<!-- Impact snapshot -->
-<section id="case" data-aos="fade-up">
-  <div class="container">
-    <h2>Impact Snapshot: Vertical Studio AI</h2>
-    <div class="zig">
-      <div>
-        <p class="kpi">45%</p>
-        <p>reduction in GPU spend</p>
-        <p class="kpi">3×</p>
-        <p>increase in simultaneous jobs</p>
-      </div>
-      <img src="cloudorchestration.png" alt="Hybrid cloud orchestration">
-    </div>
+      <li>AI &amp; Automation</li>
+      <li>FinTech &amp; Payments</li>
+      <li>High‑Growth Start‑ups</li>
+    </ul>
   </div>
 </section>
 
-<!-- Case Studies -->
+<!-- CASE STUDIES -->
 <section id="case" data-aos="fade-up" class="band-grey">
   <div class="container">
     <h2>Selected Case Studies</h2>
 
     <div class="case-grid">
-    <!-- Case 1 – Vertical Studio AI -->
-<article class="case-card">
-  <img src="Vertical_Logo.svg" alt="Vertical Studio AI logo" class="case-logo">
-  <h3>Vertical Studio AI</h3>
-  <ul>
-    <li>First <strong>10 k</strong> app users onboarded</li>
-    <li>$VERTAI token launch → $0 → <strong>$120 m</strong> market cap, 12 k holders in 30 days</li>
-    <li>Raised <strong>$4 m</strong> through token sale</li>
-    <li>GTM for Vertical Stream, Studio &amp; Cloud · <strong>10 k</strong> beta users on Stream</li>
-  </ul>
-</article>
-      
-      <!-- Case 2 – Daraz Group -->
+      <!-- Vertical Studio AI -->
+      <article class="case-card">
+        <img src="Vertical_Logo.svg" alt="Vertical Studio AI logo" class="case-logo">
+        <h3>Vertical Studio AI</h3>
+        <ul>
+          <li> First <strong>10 k</strong> app users onboarded</li>
+          <li> $VERTAI token → <strong>$120 m market‑cap</strong>, 12 k holders in 30 days</li>
+          <li> Raised <strong>$4 m</strong> via token launch</li>
+          <li> GTM for Stream, Studio &amp; Cloud · 10 k beta users</li>
+        </ul>
+      </article>
+
+      <!-- Daraz -->
       <article class="case-card">
         <img src="Daraz_Logo.png" alt="Daraz logo" class="case-logo">
         <h3>Daraz (Alibaba Group)</h3>
         <ul>
-          <li>Global Head of Financial Services</li>
-          <li>Launched first seller‑credit program in BD, PK, LK</li>
-          <li>Secured NBFC licence &amp; bank credit lines</li>
+          <li> Scaled Daraz LK to from 15 - 150m USD GMV</li>
+          <li> Global Head of Financial Services</li>
+          <li> Launched first seller‑credit program (BD, PK, LK)</li>
+          <li> Obtained NBFC licence &amp; bank credit lines</li>
         </ul>
       </article>
 
-      <!-- Case 3 – Koko BNPL -->
+      <!-- Koko -->
       <article class="case-card">
         <img src="Koko_logo.png" alt="Koko logo" class="case-logo">
         <h3>Koko (BNPL)</h3>
         <ul>
           <li>Co‑founder &amp; COO</li>
-          <li>#1 BNPL app in Sri Lanka, 1.5 m downloads</li>
-          <li>Scaled to <abbr title="US dollars">USD</abbr> 12 m GMV / yr</li>
+          <li>#1 BNPL app in Sri Lanka · 1.5 m downloads</li>
+          <li>Scaled to <strong>$12 m GMV</strong> / year</li>
         </ul>
       </article>
     </div>
   </div>
 </section>
 
-<!-- About -->
+<!-- ABOUT -->
 <section id="about" class="band-grey" data-aos="fade-up">
   <div class="container zig">
     <div>
       <h2>About Spickle B.V.</h2>
       <p>Founded by Friso Wesseling, Spickle delivers interim leadership and strategic expertise at the intersection of technology and innovation.</p>
     </div>
-    <!-- circular portrait -->
-    <img src="Friso Profile Pic.jpeg" alt="Friso Wesseling" class="profile">
+    <img src="Friso%20Profile%20Pic.jpeg" alt="Friso Wesseling" class="profile">
   </div>
 </section>
 
-<!-- Contact -->
+<!-- CONTACT -->
 <section id="contact" class="band-blue" data-aos="fade-up">
   <div class="container" style="text-align:center">
     <h2>Ready to accelerate?</h2>
-    <p>Email <a href="mailto:friso@spickle.nl" style="color:#fff">friso@spickle.nl</a> • Tel <a href="tel:+31643515977" style="color:#fff">+31 6 43 51 59 77</a></p>
+    <p>Email <a href="mailto:friso@spickle.nl" style="color:#fff">friso@spickle.nl</a> • Tel <a href="tel:+31643515977" style="color:#fff">+31 6 43 51 59 77</a></p>
     <p>Arnhemsestraat 33, 2587 SP Den Haag, Netherlands</p>
   </div>
 </section>
@@ -295,7 +247,7 @@ summary{font-weight:600;cursor:pointer;list-style:none}
 </main>
 
 <footer style="text-align:center;padding:24px;font-size:.9rem;color:#777">
-  © 2025 Spickle B.V. • KvK 90649265 • BTW NL004828530B79
+  © 2025 Spickle B.V. • KvK 90649265 • BTW NL004828530B79
 </footer>
 
 <!-- AOS init -->
