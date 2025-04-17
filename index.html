@@ -109,6 +109,9 @@ summary{font-weight:600;cursor:pointer;list-style:none}
   #hero h1{font-size:2.25rem}
   #hero p{font-size:1rem}
 }
+/* keep headline inline while mascot floats right */
+.with-mascot{display:flex;align-items:center;gap:12px;justify-content:center}
+.mascot{height:60px;width:auto}
 </style>
 </head>
 
@@ -136,6 +139,12 @@ summary{font-weight:600;cursor:pointer;list-style:none}
     <a class="btn" href="#contact">Book a call</a>
   </div>
 </section>
+  
+  <!-- hero headline with croc on the right -->
+<h1 class="with-mascot">
+  Snap into place with Spickle
+  <img src="croc-mascot.png" alt="Spickle mascot" class="mascot">
+</h1>
 
 <!-- SERVICES -->
 <section id="services" class="band-grey" data-aos="fade-up">
