@@ -1,298 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spickle B.V. – Interim Executive Leadership</title>
-  <meta name="description" content="Interim Founder/COO expertise, operational strategy and scale‑up playbooks for tech innovators.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spickle B.V. – Interim Executive Leadership</title>
+<meta name="description" content="Interim CEO & COO expertise, operational strategy and scale‑up playbooks for tech innovators.">
 
-  <!-- Google Fonts & AOS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- fonts & AOS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <style>
-    :root {
-      --blue: #0066cc;
-      --orange-1: #ff8a00;
-      --orange-2: #ff6e00;
-      --grey-bg: #fafafa;
-      --text: #333;
-      --spacing-sm: 0.5rem;
-      --spacing-md: 1rem;
-      --spacing-lg: 2rem;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #f8f8f8;
-      color: var(--text);
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      line-height: 1.25;
-    }
+<style>
+:root{
+  --blue:#0066cc;
+  --orange-1:#ff8a00;
+  --orange-2:#ff6e00;
+  --grey-bg:#fafafa;
+  --text:#333;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Roboto',sans-serif;background:#f8f8f8;color:var(--text);line-height:1.65}
 
-    header {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-      z-index: 100;
-    }
-    header .inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: var(--spacing-md) var(--spacing-lg);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo img {
-      height: 60px;
-    }
+h1,h2,h3{line-height:1.25}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: var(--spacing-lg);
-      font-weight: 500;
-    }
-    nav a {
-      color: var(--blue);
-      text-decoration: none;
-      padding: var(--spacing-sm) 0;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      color: var(--orange-2);
-    }
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:100}
+header .inner{max-width:1200px;margin:auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
+.logo img{height:70px}
 
-    section {
-      padding: var(--spacing-lg) 0;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 var(--spacing-lg);
-    }
+nav ul{list-style:none;display:flex;gap:32px;font-weight:500}
+nav a{color:var(--blue);text-decoration:none}
+nav a:hover{text-decoration:underline}
 
-    /* Hero */
-    #hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      background: radial-gradient(120% 80% at top left, var(--orange-1) 0%, var(--orange-2) 60%, var(--blue) 150%);
-    }
-    #hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: var(--spacing-sm);
-    }
-    #hero p {
-      font-size: 1.125rem;
-      margin-bottom: var(--spacing-md);
-    }
-    .btn {
-      display: inline-block;
-      background: #fff;
-      color: var(--blue);
-      padding: var(--spacing-sm) var(--spacing-lg);
-      border-radius: 30px;
-      font-weight: 500;
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-decoration: none;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
+section{padding:80px 0}
+.container{max-width:1100px;margin:auto;padding:0 24px}
 
-    /* Alternating bands */
-    .band-grey { background: var(--grey-bg); }
-    .band-blue { background: var(--blue); color: #fff; }
+/* hero (smaller) */
+#hero{min-height:60vh;display:flex;align-items:center;text-align:center;color:#fff;
+  background:radial-gradient(120% 80% at top left,var(--orange-1) 0%,var(--orange-2) 60%,var(--blue) 150%);}
+#hero h1{font-size:3rem;font-weight:700;margin-bottom:.6rem}
+#hero p{font-size:1.2rem;margin-bottom:2rem}
+.btn{display:inline-block;background:#fff;color:var(--blue);padding:14px 34px;border-radius:30px;font-weight:500;transition:.3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
 
-    /* Zig‑zag layout */
-    .zig {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--spacing-lg);
-      align-items: center;
-    }
-    .zig img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
+/* alternating bands */
+.band-grey{background:var(--grey-bg)}
+.band-blue{background:var(--blue);color:#fff}
 
-    /* Details/Accordion */
-    details {
-      margin-bottom: var(--spacing-md);
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #fff;
-      padding: var(--spacing-md);
-    }
-    summary {
-      font-weight: 600;
-      cursor: pointer;
-      list-style: none;
-      margin-bottom: var(--spacing-sm);
-    }
-    details ul {
-      list-style: disc inside;
-      margin-top: var(--spacing-sm);
-      padding-left: var(--spacing-md);
-    }
+/* zig‑zag layout */
+.zig{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:center}
+.zig img{width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
 
-    /* KPI counter */
-    .kpi {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--orange-2);
-      margin-bottom: var(--spacing-sm);
-    }
+/* accordion */
+details{margin-bottom:1rem;border:1px solid #ddd;border-radius:8px;padding:18px;background:#fff}
+summary{font-weight:600;cursor:pointer;list-style:none}
 
-    @media (max-width: 768px) {
-      #hero h1 { font-size: 2rem; }
-      #hero p { font-size: 1rem; }
-      header .inner { flex-direction: column; gap: var(--spacing-sm); }
-      nav ul { flex-wrap: wrap; justify-content: center; gap: var(--spacing-md); }
-    }
-  </style>
+/* KPI */
+.kpi{font-size:2.5rem;font-weight:700;color:var(--orange-2);}
+
+/* prefers‑reduced‑motion */
+@media (prefers-reduced-motion:reduce){
+  [data-aos]{opacity:1;transform:none!important}
+}
+
+/* responsive tweaks */
+@media(max-width:768px){
+  #hero h1{font-size:2.25rem}
+  #hero p{font-size:1rem}
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="inner">
-      <div class="logo">
-        <img src="logo.svg" alt="Spickle logo">
+<header>
+  <div class="inner">
+    <div class="logo"><img src="logo.svg" alt="Spickle logo"></div>
+    <nav><ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#case">Impact</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+
+<section id="hero" data-aos="fade-up">
+  <div class="container">
+    <h1>Interim Executive Leadership &amp; Operational Excellence</h1>
+    <p>Seasoned CEO &amp; COO expertise — unlocking growth for tech innovators.</p>
+    <a class="btn" href="#contact">Book a call</a>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="band-grey" data-aos="fade-up">
+  <div class="container">
+    <h2>Core Services</h2>
+
+    <details open>
+      <summary>Interim Executive Management (CEO &amp; COO)</summary>
+      <ul><li>Crisis leadership &amp; continuity</li><li>Board‑level reporting</li></ul>
+    </details>
+
+    <details>
+      <summary>Operational Strategy &amp; Implementation</summary>
+      <ul><li>30‑day diagnostics &amp; OKRs</li><li>Data‑driven roadmaps with KPIs</li></ul>
+    </details>
+
+    <details>
+      <summary>Process Improvement &amp; Efficiency</summary>
+      <ul><li>Workflow redesign &amp; automation</li><li>10‑30 % cost‑to‑serve reduction</li></ul>
+    </details>
+
+    <details>
+      <summary>Scaling &amp; Growth Strategies</summary>
+      <ul><li>Market‑entry playbooks</li><li>Org design &amp; talent scale‑up</li></ul>
+    </details>
+  </div>
+</section>
+
+<!-- Industries -->
+<section id="industries" class="band-blue" data-aos="fade-up">
+  <div class="container">
+    <h2>Industries &amp; Expertise</h2>
+    <p>AI & Automation • FinTech &amp; Payments • High‑Growth Start‑ups</p>
+  </div>
+</section>
+
+<!-- Impact snapshot -->
+<section id="case" data-aos="fade-up">
+  <div class="container">
+    <h2>Impact Snapshot: Vertical Studio AI</h2>
+    <div class="zig">
+      <div>
+        <p class="kpi">45%</p>
+        <p>reduction in GPU spend</p>
+        <p class="kpi">3×</p>
+        <p>increase in simultaneous jobs</p>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#industries">Industries</a></li>
-          <li><a href="#case">Impact</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <img src="case-image.jpg" alt="Hybrid GPU orchestration illustration">
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-    <section id="hero" data-aos="fade-up">
-      <div class="container">
-        <h1>Interim Executive Leadership &amp; Operational Excellence</h1>
-        <p>Seasoned CEO, COO &amp; CFO expertise — unlocking growth for tech innovators.</p>
-        <a class="btn" href="#contact">Book a call</a>
-      </div>
-    </section>
+<!-- About -->
+<section id="about" class="band-grey" data-aos="fade-up">
+  <div class="container zig">
+    <div>
+      <h2>About Spickle B.V.</h2>
+      <p>Founded by Friso Wesseling, Spickle delivers interim leadership and strategic expertise at the intersection of technology and innovation.</p>
+    </div>
+    <img src="founder.jpg" alt="Friso Wesseling">
+  </div>
+</section>
 
-    <!-- Services -->
-    <section id="services" class="band-grey" data-aos="fade-up">
-      <div class="container">
-        <h2>Core Services</h2>
-        <details open>
-          <summary>Interim Executive Management</summary>
-          <ul>
-            <li>CEO, COO &amp; CFO mandates</li>
-            <li>Crisis leadership &amp; continuity</li>
-          </ul>
-        </details>
-        <details>
-          <summary>Operational Strategy &amp; Implementation</summary>
-          <ul>
-            <li>30‑day diagnostics &amp; OKRs</li>
-            <li>Data‑driven roadmap with clear KPIs</li>
-          </ul>
-        </details>
-        <details>
-          <summary>Process Improvement &amp; Efficiency</summary>
-          <ul>
-            <li>Workflow redesign &amp; automation</li>
-            <li>10‑30% cost‑to‑serve reduction</li>
-          </ul>
-        </details>
-        <details>
-          <summary>Scaling &amp; Growth Strategies</summary>
-          <ul>
-            <li>Market‑entry &amp; GTM playbooks</li>
-            <li>Org design &amp; talent scale‑up</li>
-          </ul>
-        </details>
-      </div>
-    </section>
+<!-- Contact -->
+<section id="contact" class="band-blue" data-aos="fade-up">
+  <div class="container" style="text-align:center">
+    <h2>Ready to accelerate?</h2>
+    <p>Email <a href="mailto:info@spicklebv.com" style="color:#fff">info@spicklebv.com</a> • Tel <a href="tel:+31643515977" style="color:#fff">+31 6 43 51 59 77</a></p>
+    <p>Arnhemsestraat 33, 2587 SP Den Haag, Netherlands</p>
+  </div>
+</section>
 
-    <!-- Industries -->
-    <section id="industries" class="band-blue" data-aos="fade-up">
-      <div class="container">
-        <h2>Industries &amp; Expertise</h2>
-        <p>AI &amp; Automation • FinTech &amp; Payments • High‑Growth Start‑ups</p>
-      </div>
-    </section>
+</main>
 
-    <!-- Case Study -->
-    <section id="case" data-aos="fade-up">
-      <div class="container">
-        <h2>Impact Snapshot: Vertical Studio AI</h2>
-        <div class="zig">
-          <div>
-            <p class="kpi" id="kpi1">0%</p><p>reduction in GPU spend</p>
-            <p class="kpi" id="kpi2">0×</p><p>increase in simultaneous jobs</p>
-          </div>
-          <img src="case-image.jpg" alt="Hybrid GPU orchestration illustration">
-        </div>
-      </div>
-    </section>
+<footer style="text-align:center;padding:24px;font-size:.9rem;color:#777">
+  © 2025 Spickle B.V. • KvK 90649265 • BTW NL004828530B79
+</footer>
 
-    <!-- About -->
-    <section id="about" class="band-grey" data-aos="fade-up">
-      <div class="container zig">
-        <div>
-          <h2>About Spickle B.V.</h2>
-          <p>Founded by Friso Wesseling, Spickle delivers interim leadership and strategic expertise at the intersection of technology and innovation.</p>
-        </div>
-        <img src="founder.jpg" alt="Friso Wesseling">
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="band-blue" data-aos="fade-up">
-      <div class="container" style="text-align:center;">
-        <h2>Ready to accelerate?</h2>
-        <p>Email <a href="mailto:info@spicklebv.com" style="color:#fff; text-decoration:underline;">info@spicklebv.com</a> • Tel <a href="tel:+31643515977" style="color:#fff; text-decoration:underline;">+31 6 43 51 59 77</a></p>
-        <p>Geuzenkade 25h, 1056 KK Amsterdam</p>
-      </div>
-    </section>
-  </main>
-
-  <footer style="text-align:center; padding: var(--spacing-md); font-size:0.9rem; color:#777;">
-    © 2025 Spickle B.V. • KvK 90649265 • BTW NL004828530B79
-  </footer>
-
-  <!-- JS: AOS & Counters -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true });
-    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-      import('https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js').then(({ gsap }) => {
-        import('https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js').then(({ ScrollTrigger }) => {
-          gsap.registerPlugin(ScrollTrigger);
-          gsap.to('#kpi1', { innerText: 45, duration: 2, roundProps: 'innerText', scrollTrigger: '#kpi1' });
-          gsap.to('#kpi2', { innerText: 3, duration: 2, roundProps: 'innerText', scrollTrigger: '#kpi2' });
-        });
-      });
-    }
-  </script>
+<!-- AOS init -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({once:true});</script>
 </body>
 </html>
