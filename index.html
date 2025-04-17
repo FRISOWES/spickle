@@ -89,6 +89,24 @@ summary{font-weight:600;cursor:pointer;list-style:none}
   #hero h1{font-size:2.25rem}
   #hero p{font-size:1rem}
 }
+  /* rounded “bubbles” for the Industries band */
+#industries .industry-bubbles{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+#industries .industry-bubbles li{
+  list-style:none;
+  background:rgba(255,255,255,.18);  /* translucent white */
+  padding:12px 28px;
+  border-radius:40px;
+  font-weight:500;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+  backdrop-filter:blur(4px);         /* subtle glass effect */
+}
 </style>
 </head>
 
@@ -147,10 +165,14 @@ summary{font-weight:600;cursor:pointer;list-style:none}
 <section id="industries" class="band-blue" data-aos="fade-up">
   <div class="container">
     <h2>Industries &amp; Expertise</h2>
-    <p>AI & Automation • FinTech &amp; Payments • High‑Growth Start‑ups</p>
+    <ul class="industry-bubbles">
+  <li>AI &amp; Automation</li>
+  <li>FinTech &amp; Payments</li>
+  <li>High‑Growth Start‑ups</li>
+</ul>
   </div>
 </section>
-
+  
 <!-- Impact snapshot -->
 <section id="case" data-aos="fade-up">
   <div class="container">
