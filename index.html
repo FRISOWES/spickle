@@ -107,6 +107,37 @@ summary{font-weight:600;cursor:pointer;list-style:none}
   box-shadow:0 2px 6px rgba(0,0,0,.15);
   backdrop-filter:blur(4px);         /* subtle glass effect */
 }
+  /* ======== CASE‑STUDY GRID ======== */
+.case-grid{
+  display:grid;
+  gap:32px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  margin-top:40px;
+}
+
+.case-card{
+  background:#fff;
+  border-radius:12px;
+  padding:28px 24px;
+  text-align:center;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+
+.case-card h3{margin:12px 0;font-size:1.15rem}
+.case-card ul{
+  list-style:disc;
+  list-style-position:inside;
+  padding-left:1.25rem;
+  margin:0;
+  font-size:.95rem;
+}
+
+.case-logo{
+  height:60px;
+  width:auto;
+  object-fit:contain;
+  margin-bottom:12px;
+}
 </style>
 </head>
 
@@ -185,6 +216,48 @@ summary{font-weight:600;cursor:pointer;list-style:none}
         <p>increase in simultaneous jobs</p>
       </div>
       <img src="cloudorchestration.png" alt="Hybrid cloud orchestration">
+    </div>
+  </div>
+</section>
+
+<!-- Case Studies -->
+<section id="case" data-aos="fade-up" class="band-grey">
+  <div class="container">
+    <h2>Selected Case Studies</h2>
+
+    <div class="case-grid">
+      <!-- Case 1 – Vertical Studio AI -->
+      <article class="case-card">
+        <img src="logo-vertical.png" alt="Vertical Studio AI logo" class="case-logo">
+        <h3>Vertical Studio AI</h3>
+        <ul>
+          <li>Interim COO (2024‑now)</li>
+          <li>Hybrid GPU network cut <strong>45 % cost</strong></li>
+          <li>3× increase in concurrent fine‑tuning jobs</li>
+        </ul>
+      </article>
+
+      <!-- Case 2 – Daraz Group -->
+      <article class="case-card">
+        <img src="logo-daraz.png" alt="Daraz logo" class="case-logo">
+        <h3>Daraz (Alibaba Group)</h3>
+        <ul>
+          <li>Global Head of Financial Services</li>
+          <li>Launched first seller‑credit program in BD, PK, LK</li>
+          <li>Secured NBFC licence &amp; bank credit lines</li>
+        </ul>
+      </article>
+
+      <!-- Case 3 – Koko BNPL -->
+      <article class="case-card">
+        <img src="logo-koko.png" alt="Koko logo" class="case-logo">
+        <h3>Koko (BNPL)</h3>
+        <ul>
+          <li>Co‑founder &amp; COO</li>
+          <li>#1 BNPL app in Sri Lanka, 1.5 m downloads</li>
+          <li>Scaled to <abbr title="US dollars">USD</abbr> 12 m GMV / yr</li>
+        </ul>
+      </article>
     </div>
   </div>
 </section>
