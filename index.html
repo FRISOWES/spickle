@@ -61,14 +61,21 @@
   <style>
     /* Custom CSS for elements that can't be done with Tailwind */
     .gradient-text {
-      background: linear-gradient(90deg, #ff8a00 0%, #ff6e00 50%, #0066cc 100%);
+      background: linear-gradient(90deg, #0066cc 0%, #ff8a00 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
     
     .hero-gradient {
-      background: radial-gradient(120% 80% at top left, #ff8a00 0%, #ff6e00 60%, #0066cc 150%);
+      background: linear-gradient(135deg, #0066cc 0%, #003366 100%);
+    }
+    
+    .hero-text-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
     .service-card {
@@ -178,24 +185,26 @@
   <section class="hero-gradient min-h-screen flex items-center pt-20 pb-32 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==')"></div>
     
-    <div class="container mx-auto px-6 text-center relative z-10" data-aos="fade-up">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
-        <span class="gradient-text">Interim Executive Leadership</span><br>
-        <span class="text-white">for Tech Innovators</span>
-      </h1>
-      
-      <p class="text-xl md:text-2xl text-white opacity-90 max-w-3xl mx-auto mb-10">
-        Seasoned CEO & COO expertise to unlock growth, optimize operations, and scale your technology business.
-      </p>
-      
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#contact" class="btn-primary bg-white text-primary font-bold px-8 py-4 rounded-full text-lg hover:shadow-xl transition-all duration-300">
-          Book a Strategy Call
-          <i class="fas fa-arrow-right ml-2"></i>
-        </a>
-        <a href="#services" class="border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white hover:bg-opacity-10 transition-all duration-300">
-          Explore Services
-        </a>
+    <div class="container mx-auto px-6 relative z-10" data-aos="fade-up">
+      <div class="hero-text-container max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-dark mb-6 leading-tight">
+          <span class="gradient-text">Interim Executive Leadership</span><br>
+          <span class="text-dark">for Tech Innovators</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+          Seasoned CEO & COO expertise to unlock growth, optimize operations, and scale your technology business.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-start gap-4">
+          <a href="#contact" class="btn-primary bg-primary text-white font-bold px-8 py-4 rounded-full text-lg hover:shadow-xl transition-all duration-300">
+            Book a Strategy Call
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a href="#services" class="border-2 border-primary text-primary font-bold px-8 py-4 rounded-full text-lg hover:bg-primary hover:bg-opacity-10 transition-all duration-300">
+            Explore Services
+          </a>
+        </div>
       </div>
       
       <div class="mt-16 flex justify-center animate-float">
@@ -521,62 +530,6 @@
                   <p class="text-sm text-gray-500 mt-1">— Friso Wesseling, Founder</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <span class="text-primary font-bold uppercase tracking-wider">Client Feedback</span>
-        <h2 class="text-4xl font-display font-bold mt-2 mb-4">What Our Clients Say</h2>
-      </div>
-      
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-center mb-4">
-            <div class="text-yellow-400 text-xl mr-2">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 italic mb-6">
-            "Spickle's interim leadership was instrumental in navigating our Series B transition. They implemented operational improvements that reduced our burn rate by 40% while maintaining growth momentum."
-          </p>
-          <div class="flex items-center">
-            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
-            <div>
-              <h4 class="font-bold">Sarah Chen</h4>
-              <p class="text-sm text-gray-500">CEO, AI Startup</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
-          <div class="flex items-center mb-4">
-            <div class="text-yellow-400 text-xl mr-2">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 italic mb-6">
-            "The operational playbook developed by Spickle helped us scale from 50 to 200 employees without losing our culture or efficiency. Their hands-on approach made all the difference."
-          </p>
-          <div class="flex items-center">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
-            <div>
-              <h4 class="font-bold">Michael Rodriguez</h4>
-              <p class="text-sm text-gray-500">Founder, FinTech Company</p>
             </div>
           </div>
         </div>
