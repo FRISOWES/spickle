@@ -1,259 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spickle B.V. – Interim Executive Leadership</title>
-<meta name="description" content="Interim CEO & COO expertise, operational strategy and scale‑up playbooks for tech innovators.">
-
-<!-- fonts & AOS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<style>
-:root{
-  --blue:#0066cc;
-  --orange-1:#ff8a00;
-  --orange-2:#ff6e00;
-  --grey-bg:#fafafa;
-  --text:#333;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Roboto',sans-serif;background:#f8f8f8;color:var(--text);line-height:1.65}
-
-h1,h2,h3{line-height:1.25}
-
-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:100}
-header .inner{max-width:1200px;margin:auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
-.logo img{height:140px;width:auto}
-
-nav ul{list-style:none;display:flex;gap:32px;font-weight:500}
-nav a{color:var(--blue);text-decoration:none}
-nav a:hover{text-decoration:underline}
-
-section{padding:80px 0}
-.container{max-width:1100px;margin:auto;padding:0 24px}
-
-/* hero (reduced height) */
-#hero{
-  min-height:45vh;display:flex;align-items:center;text-align:center;color:#fff;
-  background:radial-gradient(120% 80% at top left,var(--orange-1) 0%,var(--orange-2) 60%,var(--blue) 150%);
-}
-#hero h1{font-size:3rem;font-weight:700;margin-bottom:.6rem}
-#hero p{font-size:1.2rem;margin-bottom:2rem}
-.btn{display:inline-block;background:#fff;color:var(--blue);padding:14px 34px;border-radius:30px;font-weight:500;transition:.3s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
-
-/* alternating bands */
-.band-grey{background:var(--grey-bg)}
-.band-blue{background:var(--blue);color:#fff}
-
-/* zig‑zag layout */
-.zig{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:center}
-.zig img{width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-
-/* accordion */
-details{margin-bottom:1rem;border:1px solid #ddd;border-radius:8px;padding:18px;background:#fff}
-summary{font-weight:600;cursor:pointer;list-style:none}
-
-/* bullet‑indent for Services accordion */
-#services details ul{
-  list-style:disc;list-style-position:inside;padding-left:1.75rem;margin:0;
-}
-#services details li{padding-inline-start:.35rem}
-
-/* ===== SERVICE ICON SPRITE (2×2 grid, 768×768) ===== */
-.service-icon{
-  display:inline-block;width:28px;height:28px;margin-right:10px;vertical-align:-6px;
-  background:url('services-icons.png') no-repeat;
-  background-size:200% 200%;          /* divides sprite into 2×2 quadrants */
-  filter:invert(23%) sepia(88%) saturate(2044%) hue-rotate(201deg) brightness(96%) contrast(104%);
-}
-.icon-interim  {background-position:0%   0%  ;}
-.icon-strategy {background-position:100% 0%  ;}
-.icon-process  {background-position:0%   100%;}
-.icon-scaling  {background-position:100% 100%;}
-
-/* KPI */
-.kpi{font-size:2.5rem;font-weight:700;color:var(--orange-2);}
-
-/* round profile photo */
-#about img.profile{
-  max-width:240px;width:60%;aspect-ratio:1/1;border-radius:50%;
-  object-fit:cover;box-shadow:0 4px 20px rgba(0,0,0,.15);margin-left:auto;
-}
-
-/* ===== CASE‑STUDY GRID ===== */
-.case-grid{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:40px}
-.case-card{background:#fff;border-radius:12px;padding:28px 24px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-.case-card h3{margin:12px 0;font-size:1.15rem}
-.case-card ul{list-style:disc;list-style-position:inside;padding-left:1.25rem;margin:0;font-size:.95rem}
-.case-logo{height:60px;width:auto;object-fit:contain;margin-bottom:12px}
-
-/* ===== INDUSTRY BUBBLES ===== */
-#industries .industry-bubbles{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:24px}
-#industries .industry-bubbles li{list-style:none;background:rgba(255,255,255,.18);padding:12px 28px;border-radius:40px;font-weight:500;box-shadow:0 2px 6px rgba(0,0,0,.15);backdrop-filter:blur(4px)}
-
-/* motion accessibility */
-@media (prefers-reduced-motion:reduce){
-  [data-aos]{opacity:1;transform:none!important}
-}
-
-/* responsive tweaks */
-@media(max-width:768px){
-  #hero h1{font-size:2.25rem}
-  #hero p{font-size:1rem}
-}
- /* center the headline in the blue “Industries” band */
-#industries h2{
-  text-align:center;
-}
-#services h2{
-  margin-bottom:24px;     /* adjust 16‑32 px to taste */
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spickle B.V. – Interim Executive Leadership</title>
+  <meta name="description" content="Interim CEO & COO expertise, operational strategy and scale‑up playbooks for tech innovators.">
   
-</style>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0066cc',
+            secondary: '#ff8a00',
+            accent: '#ff6e00',
+            dark: '#1a1a1a',
+            light: '#f8fafc'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Manrope', 'sans-serif']
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'fade-in': 'fadeIn 0.5s ease-out forwards',
+            'slide-up': 'slideUp 0.7s ease-out forwards'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-12px)' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* Custom CSS for elements that can't be done with Tailwind */
+    .gradient-text {
+      background: linear-gradient(90deg, #ff8a00 0%, #ff6e00 50%, #0066cc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .hero-gradient {
+      background: radial-gradient(120% 80% at top left, #ff8a00 0%, #ff6e00 60%, #0066cc 150%);
+    }
+    
+    .service-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-left-color: #0066cc;
+    }
+    
+    .industry-pill {
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+    
+    .industry-pill:hover {
+      transform: scale(1.05);
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .case-card {
+      transition: all 0.3s ease;
+      border-top: 3px solid transparent;
+    }
+    
+    .case-card:hover {
+      transform: translateY(-8px);
+      border-top-color: #ff8a00;
+    }
+    
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+    
+    .btn-primary:hover::before {
+      width: 100%;
+    }
+    
+    /* Animation delays */
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #0066cc;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0052a3;
+    }
+  </style>
 </head>
 
-<body>
-<header>
-  <div class="inner">
-    <div class="logo"><img src="spickle-blue.png" alt="Spickle logo"></div>
-    <nav><ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#industries">Industries</a></li>
-      <li><a href="#case">Impact</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul></nav>
-  </div>
-</header>
-
-<main>
-
-<!-- HERO -->
-<section id="hero" data-aos="fade-up">
-  <div class="container">
-    <h1>Interim Executive Leadership &amp; Operational Excellence</h1>
-    <p>Seasoned CEO &amp; COO expertise — unlocking growth for tech innovators.</p>
-    <a class="btn" href="#contact">Book a call</a>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="band-grey" data-aos="fade-up">
-  <div class="container">
-    <h2>Core Services</h2>
-
-    <details open>
-      <summary><span class="service-icon icon-interim"></span>Interim Executive Management (CEO &amp; COO)</summary>
-      <ul><li>Crisis leadership &amp; continuity</li><li>Board‑level reporting</li></ul>
-    </details>
-
-    <details>
-      <summary><span class="service-icon icon-strategy"></span>Operational Strategy &amp; Implementation</summary>
-      <ul><li>30‑day diagnostics &amp; OKRs</li><li>Data‑driven roadmaps with KPIs</li></ul>
-    </details>
-
-    <details>
-      <summary><span class="service-icon icon-process"></span>Process Improvement &amp; Efficiency</summary>
-      <ul><li>Workflow redesign &amp; automation</li><li>10‑30 % cost‑to‑serve reduction</li></ul>
-    </details>
-
-    <details>
-      <summary><span class="service-icon icon-scaling"></span>Scaling &amp; Growth Strategies</summary>
-      <ul><li>Market‑entry playbooks</li><li>Org design &amp; talent scale‑up</li></ul>
-    </details>
-  </div>
-</section>
-
-<!-- INDUSTRIES -->
-<section id="industries" class="band-blue" data-aos="fade-up">
-  <div class="container">
-    <h2>Industries &amp; Expertise</h2>
-    <ul class="industry-bubbles">
-      <li>AI &amp; Automation</li>
-      <li>FinTech &amp; Payments</li>
-      <li>High‑Growth Start‑ups</li>
-    </ul>
-  </div>
-</section>
-
-<!-- CASE STUDIES -->
-<section id="case" data-aos="fade-up" class="band-grey">
-  <div class="container">
-    <h2>Selected Case Studies</h2>
-
-    <div class="case-grid">
-      <!-- Vertical Studio AI -->
-      <article class="case-card">
-        <img src="Vertical_Logo.svg" alt="Vertical Studio AI logo" class="case-logo">
-        <h3>Vertical Studio AI</h3>
-        <ul>
-          <li>First <strong>10 k</strong> app users onboarded</li>
-          <li>$VERTAI token → <strong>$120 m market cap</strong>, 12 k holders / 30 days</li>
-          <li>Raised <strong>$4 m</strong> via token sale</li>
-          <li>GTM for Stream, Studio &amp; Cloud · 10 k beta users</li>
+<body class="font-sans text-dark bg-light">
+  <!-- Header -->
+  <header class="fixed w-full bg-white shadow-sm z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="logo">
+        <img src="spickle-blue.png" alt="Spickle logo" class="h-20">
+      </div>
+      
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8">
+          <li><a href="#services" class="text-primary font-medium hover:text-accent transition-colors">Services</a></li>
+          <li><a href="#industries" class="text-primary font-medium hover:text-accent transition-colors">Industries</a></li>
+          <li><a href="#case" class="text-primary font-medium hover:text-accent transition-colors">Impact</a></li>
+          <li><a href="#about" class="text-primary font-medium hover:text-accent transition-colors">About</a></li>
+          <li><a href="#contact" class="bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all">Contact</a></li>
         </ul>
-      </article>
-
-      <!-- Daraz -->
-      <article class="case-card">
-        <img src="Daraz_Logo.png" alt="Daraz logo" class="case-logo">
-        <h3>Daraz (Alibaba Group)</h3>
-        <ul>
-          <li>Global Head of Financial Services</li>
-          <li>Launched seller‑credit in BD, PK &amp; LK</li>
-          <li>Obtained NBFC licence &amp; bank credit lines</li>
-        </ul>
-      </article>
-
-      <!-- Koko -->
-      <article class="case-card">
-        <img src="Koko_logo.png" alt="Koko logo" class="case-logo">
-        <h3>Koko (BNPL)</h3>
-        <ul>
-          <li>Co‑founder &amp; COO</li>
-          <li>#1 BNPL app in Sri Lanka · 1.5 m downloads</li>
-          <li>Scaled to <strong>$12 m GMV</strong> / year</li>
-        </ul>
-      </article>
+      </nav>
+      
+      <button class="md:hidden text-primary text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ABOUT -->
-<section id="about" class="band-grey" data-aos="fade-up">
-  <div class="container zig">
-    <div>
-      <h2>About Spickle B.V.</h2>
-      <p>Founded by Friso Wesseling, Spickle delivers interim leadership and strategic expertise at the intersection of technology and innovation.</p>
+  <!-- Hero Section -->
+  <section class="hero-gradient min-h-screen flex items-center pt-20 pb-32 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==')"></div>
+    
+    <div class="container mx-auto px-6 text-center relative z-10" data-aos="fade-up">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
+        <span class="gradient-text">Interim Executive Leadership</span><br>
+        <span class="text-white">for Tech Innovators</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-white opacity-90 max-w-3xl mx-auto mb-10">
+        Seasoned CEO & COO expertise to unlock growth, optimize operations, and scale your technology business.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#contact" class="btn-primary bg-white text-primary font-bold px-8 py-4 rounded-full text-lg hover:shadow-xl transition-all duration-300">
+          Book a Strategy Call
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+        <a href="#services" class="border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+          Explore Services
+        </a>
+      </div>
+      
+      <div class="mt-16 flex justify-center animate-float">
+        <i class="fas fa-chevron-down text-white text-3xl"></i>
+      </div>
     </div>
-    <img src="Friso%20Profile%20Pic.jpeg" alt="Friso Wesseling" class="profile">
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="band-blue" data-aos="fade-up">
-  <div class="container" style="text-align:center">
-    <h2>Ready to accelerate?</h2>
-    <p>Email <a href="mailto:friso@spickle.nl" style="color:#fff">friso@spickle.nl</a> • Tel <a href="tel:+31643515977" style="color:#fff">+31 6 43 51 59 77</a></p>
-    <p>Arnhemsestraat 33, 2587 SP Den Haag, Netherlands</p>
-  </div>
-</section>
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-primary font-bold uppercase tracking-wider">What We Offer</span>
+        <h2 class="text-4xl font-display font-bold mt-2 mb-4">Our Core Services</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Comprehensive executive leadership and operational expertise tailored to your business needs.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Service 1 -->
+        <div class="service-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-primary text-4xl mb-4">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Interim Executive Management</h3>
+          <p class="text-gray-600 mb-4">
+            Seamless leadership transitions with experienced interim CEOs and COOs.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>Crisis leadership & continuity</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>Board-level reporting</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-primary text-4xl mb-4">
+            <i class="fas fa-chess"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Operational Strategy</h3>
+          <p class="text-gray-600 mb-4">
+            Data-driven roadmaps to optimize your business operations.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>30-day diagnostics & OKRs</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>KPI-driven roadmaps</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-primary text-4xl mb-4">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Process Improvement</h3>
+          <p class="text-gray-600 mb-4">
+            Streamline workflows and reduce operational costs significantly.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>Workflow redesign & automation</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>10-30% cost-to-serve reduction</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-primary text-4xl mb-4">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Scaling Strategies</h3>
+          <p class="text-gray-600 mb-4">
+            Proven playbooks to accelerate your growth trajectory.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>Market-entry playbooks</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+              <span>Org design & talent scale-up</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</main>
+  <!-- Industries Section -->
+  <section id="industries" class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="font-bold uppercase tracking-wider opacity-80">Our Expertise</span>
+        <h2 class="text-4xl font-display font-bold mt-2 mb-4">Industries We Serve</h2>
+        <p class="text-lg opacity-90 max-w-2xl mx-auto">
+          Specialized knowledge across high-growth technology sectors.
+        </p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+        <div class="industry-pill bg-white bg-opacity-20 px-6 py-3 rounded-full font-medium" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-robot mr-2"></i> AI & Automation
+        </div>
+        <div class="industry-pill bg-white bg-opacity-20 px-6 py-3 rounded-full font-medium" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-money-bill-wave mr-2"></i> FinTech & Payments
+        </div>
+        <div class="industry-pill bg-white bg-opacity-20 px-6 py-3 rounded-full font-medium" data-aos="fade-up" data-aos-delay="300">
+          <i class="fas fa-rocket mr-2"></i> High-Growth Startups
+        </div>
+        <div class="industry-pill bg-white bg-opacity-20 px-6 py-3 rounded-full font-medium" data-aos="fade-up" data-aos-delay="400">
+          <i class="fas fa-cloud mr-2"></i> SaaS Platforms
+        </div>
+        <div class="industry-pill bg-white bg-opacity-20 px-6 py-3 rounded-full font-medium" data-aos="fade-up" data-aos-delay="500">
+          <i class="fas fa-mobile-alt mr-2"></i> Mobile Applications
+        </div>
+        <div class="industry-pill bg-white bg-opacity-20 px-6 py-3 rounded-full font-medium" data-aos="fade-up" data-aos-delay="600">
+          <i class="fas fa-shopping-cart mr-2"></i> E-commerce
+        </div>
+      </div>
+      
+      <div class="mt-16 flex justify-center" data-aos="fade-up">
+        <div class="bg-white bg-opacity-20 p-6 rounded-2xl backdrop-blur-sm max-w-3xl">
+          <h3 class="text-xl font-bold mb-3">Cross-Industry Expertise</h3>
+          <p class="opacity-90">
+            Our team brings deep operational knowledge across technology sectors, allowing us to adapt best practices from adjacent industries to drive innovation in your business.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer style="text-align:center;padding:24px;font-size:.9rem;color:#777">
-  © 2025 Spickle B.V. • KvK 90649265 • BTW NL004828530B79 |
-  <a href="privacy.html">Privacy &amp; Cookie Policy</a> | 
-  <a href="terms.html">Terms of Business</a>
-</footer>
+  <!-- Case Studies Section -->
+  <section id="case" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-primary font-bold uppercase tracking-wider">Success Stories</span>
+        <h2 class="text-4xl font-display font-bold mt-2 mb-4">Client Impact</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Measurable results delivered for innovative companies.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Case 1 -->
+        <div class="case-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex justify-center mb-6">
+            <div class="bg-gray-100 p-4 rounded-lg">
+              <img src="Vertical_Logo.svg" alt="Vertical Studio AI logo" class="h-12">
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-4">Vertical Studio AI</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+              <div class="bg-primary rounded-full p-1 mr-3 mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span>First <strong class="text-primary">10k</strong> app users onboarded</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-primary rounded-full p-1 mr-3 mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span><strong class="text-primary">$120M</strong> market cap achieved</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-primary rounded-full p-1 mr-3 mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span><strong class="text-primary">$4M</strong> raised via token sale</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <span class="text-sm text-gray-500">Interim COO Services</span>
+          </div>
+        </div>
+        
+        <!-- Case 2 -->
+        <div class="case-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex justify-center mb-6">
+            <div class="bg-gray-100 p-4 rounded-lg">
+              <img src="Daraz_Logo.png" alt="Daraz logo" class="h-12">
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-4">Daraz (Alibaba Group)</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+              <div class="bg-primary rounded-full p-1 mr-3 mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span>Global Head of Financial Services</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-primary rounded-full p-1 mr-3 mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span>Seller-credit launched in 3 markets</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-primary rounded-full p-1 mr-3 mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span>NBFC licence & bank credit lines secured</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <span class="text-sm text-gray-500">Financial Services Strategy</span>
+          </div>
+        </div>
+        
+        <!-- Case 3 -->
+        <div class="case-card bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex justify-center mb-6">
+            <div class="bg-gray-100 p-4 rounded-lg">
+              <img src="Koko_logo.png" alt="Koko logo" class="h-12">
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-4">Koko (BNPL)</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+              <div class="bg-primary rounded-full p-1 mr-3 mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span>Co-founded as COO</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-primary rounded-full p-1 mr-3 mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span><strong class="text-primary">#1</strong> BNPL app in Sri Lanka</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-primary rounded-full p-1 mr-3 mt-1">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+              <span>Scaled to <strong class="text-primary">$12M</strong> GMV/year</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <span class="text-sm text-gray-500">Co-Founder & COO</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center" data-aos="fade-up">
+        <a href="#contact" class="inline-flex items-center bg-primary text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-opacity-90 transition-all">
+          Get Similar Results
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-<!-- AOS init -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({once:true});</script>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2" data-aos="fade-right">
+          <span class="text-primary font-bold uppercase tracking-wider">Our Founder</span>
+          <h2 class="text-4xl font-display font-bold mt-2 mb-6">About Spickle B.V.</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Founded by Friso Wesseling, Spickle delivers interim leadership and strategic expertise at the intersection of technology and innovation.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-10 p-2 rounded-lg mr-4">
+                <i class="fas fa-medal text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">20+ Years Experience</h4>
+                <p class="text-gray-600">Across executive leadership, operations, and scaling businesses</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-10 p-2 rounded-lg mr-4">
+                <i class="fas fa-globe text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">Global Perspective</h4>
+                <p class="text-gray-600">Worked with companies across Europe, Asia, and North America</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-10 p-2 rounded-lg mr-4">
+                <i class="fas fa-bolt text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">Rapid Impact</h4>
+                <p class="text-gray-600">Delivers measurable results within the first 30-60 days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2 relative" data-aos="fade-left">
+          <div class="relative">
+            <img src="Friso%20Profile%20Pic.jpeg" alt="Friso Wesseling" class="rounded-2xl shadow-xl w-full max-w-md mx-auto">
+            <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
+              <div class="flex items-center">
+                <div class="bg-primary p-3 rounded-lg mr-4">
+                  <i class="fas fa-quote-left text-white text-xl"></i>
+                </div>
+                <div>
+                  <p class="font-medium">"Our mission is to help technology companies achieve operational excellence at scale."</p>
+                  <p class="text-sm text-gray-500 mt-1">— Friso Wesseling, Founder</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-primary font-bold uppercase tracking-wider">Client Feedback</span>
+        <h2 class="text-4xl font-display font-bold mt-2 mb-4">What Our Clients Say</h2>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-400 text-xl mr-2">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 italic mb-6">
+            "Spickle's interim leadership was instrumental in navigating our Series B transition. They implemented operational improvements that reduced our burn rate by 40% while maintaining growth momentum."
+          </p>
+          <div class="flex items-center">
+            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold">Sarah Chen</h4>
+              <p class="text-sm text-gray-500">CEO, AI Startup</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-400 text-xl mr-2">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 italic mb-6">
+            "The operational playbook developed by Spickle helped us scale from 50 to 200 employees without losing our culture or efficiency. Their hands-on approach made all the difference."
+          </p>
+          <div class="flex items-center">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold">Michael Rodriguez</h4>
+              <p class="text-sm text-gray-500">Founder, FinTech Company</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-4xl font-display font-bold mb-6">Ready to Accelerate Your Business?</h2>
+        <p class="text-xl opacity-90 mb-10">
+          Let's discuss how we can help you achieve operational excellence and scale your technology business.
+        </p>
+        
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-3xl mb-4">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="font-bold mb-2">Email Us</h3>
+            <a href="mailto:friso@spickle.nl" class="opacity-90 hover:opacity-100 transition-opacity">friso@spickle.nl</a>
+          </div>
+          
+          <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-3xl mb-4">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3 class="font-bold mb-2">Call Us</h3>
+            <a href="tel:+31643515977" class="opacity-90 hover:opacity-100 transition-opacity">+31 6 43 51 59 77</a>
+          </div>
+          
+          <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-3xl mb-4">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3 class="font-bold mb-2">Visit Us</h3>
+            <p class="opacity-90">Arnhemsestraat 33, 2587 SP Den Haag, Netherlands</p>
+          </div>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="400">
+          <a href="#" class="inline-flex items-center bg-white text-primary font-bold px-8 py-4 rounded-full text-lg hover:bg-opacity-90 transition-all">
+            Schedule a Consultation
+            <i class="fas fa-calendar-alt ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-gray-400 py-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <img src="spickle-blue.png" alt="Spickle logo" class="h-12 mb-4">
+          <p class="text-sm">Interim executive leadership for technology innovators.</p>
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-medium text-xl"></i>
+            </a>
+          </div>
+          
+          <div class="border-l border-gray-700 h-8 mx-4 hidden md:block"></div>
+          
+          <nav class="flex flex-wrap justify-center gap-4 md:gap-8">
+            <a href="privacy.html" class="text-sm hover:text-white transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="text-sm hover:text-white transition-colors">Terms of Business</a>
+            <span class="text-sm">© 2025 Spickle B.V.</span>
+            <span class="text-sm">KvK 90649265</span>
+            <span class="text-sm">BTW NL004828530B79</span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-out-quart'
+    });
+    
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.remove('opacity-100', 'visible');
+        backToTopButton.classList.add('opacity-0', 'invisible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Mobile Menu Toggle (placeholder - would need implementation)
+    const mobileMenuButton = document.querySelector('header button');
+    mobileMenuButton.addEventListener('click', () => {
+      alert('Mobile menu would open here in a full implementation');
+    });
+  </script>
 </body>
 </html>
